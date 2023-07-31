@@ -1,0 +1,65 @@
+Traceback (most recent call last):
+  File "/Users/pujatrivedi/miniconda3/envs/jupyter_book/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/pujatrivedi/miniconda3/envs/jupyter_book/lib/python3.9/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/pujatrivedi/miniconda3/envs/jupyter_book/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Users/pujatrivedi/miniconda3/envs/jupyter_book/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/Users/pujatrivedi/miniconda3/envs/jupyter_book/lib/python3.9/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/Users/pujatrivedi/miniconda3/envs/jupyter_book/lib/python3.9/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/pujatrivedi/miniconda3/envs/jupyter_book/lib/python3.9/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+print("reading average_template_10")
+rpath = volumes['average_template_10']['files']['nii.gz']['relative_path']
+file = os.path.join( download_base, rpath)
+average_template_image = sitk.ReadImage( file )
+average_template_array = sitk.GetArrayViewFromImage( average_template_image )
+
+print("reading annotation_10")
+rpath = volumes['annotation_10']['files']['nii.gz']['relative_path']
+file = os.path.join( download_base, rpath)
+annotation_image = sitk.ReadImage( file )
+annotation_array = sitk.GetArrayViewFromImage( annotation_image )
+
+print("reading annotation_boundary_10")
+rpath = volumes['annotation_boundary_10']['files']['nii.gz']['relative_path']
+file = os.path.join( download_base, rpath)
+annotation_boundary_image = sitk.ReadImage( file )
+annotation_boundary_array = sitk.GetArrayViewFromImage( annotation_boundary_image )
+------------------
+
+----- stdout -----
+reading average_template_10
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mRuntimeError[0m                              Traceback (most recent call last)
+[0;32m/var/folders/sd/7d15v2v168sd396gsdjsn8j00000gn/T/ipykernel_2560/3208147646.py[0m in [0;36m?[0;34m()[0m
+[0;32m----> 4[0;31m [0mprint[0m[0;34m([0m[0;34m"reading average_template_10"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m [0mrpath[0m [0;34m=[0m [0mvolumes[0m[0;34m[[0m[0;34m'average_template_10'[0m[0;34m][0m[0;34m[[0m[0;34m'files'[0m[0;34m][0m[0;34m[[0m[0;34m'nii.gz'[0m[0;34m][0m[0;34m[[0m[0;34m'relative_path'[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m [0mfile[0m [0;34m=[0m [0mos[0m[0;34m.[0m[0mpath[0m[0;34m.[0m[0mjoin[0m[0;34m([0m [0mdownload_base[0m[0;34m,[0m [0mrpath[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      7[0m [0maverage_template_image[0m [0;34m=[0m [0msitk[0m[0;34m.[0m[0mReadImage[0m[0;34m([0m [0mfile[0m [0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/jupyter_book/lib/python3.9/site-packages/SimpleITK/extra.py[0m in [0;36m?[0;34m(fileName, outputPixelType, imageIO)[0m
+[1;32m    351[0m         [0mreader[0m[0;34m.[0m[0mSetFileNames[0m[0;34m([0m[0;34m[[0m[0mstr[0m[0;34m([0m[0mname[0m[0;34m)[0m [0;32mfor[0m [0mname[0m [0;32min[0m [0mfileName[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    352[0m [0;34m[0m[0m
+[1;32m    353[0m     [0mreader[0m[0;34m.[0m[0mSetImageIO[0m[0;34m([0m[0mimageIO[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    354[0m     [0mreader[0m[0;34m.[0m[0mSetOutputPixelType[0m[0;34m([0m[0moutputPixelType[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 355[0;31m     [0;32mreturn[0m [0mreader[0m[0;34m.[0m[0mExecute[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m~/miniconda3/envs/jupyter_book/lib/python3.9/site-packages/SimpleITK/SimpleITK.py[0m in [0;36m?[0;34m(self)[0m
+[1;32m   8434[0m         [0mtype[0m [0mto[0m [0mbe[0m [0msame[0m [0;32mas[0m [0mthe[0m [0mfile[0m[0;34m.[0m [0mIf[0m [0mthe[0m [0mpixel[0m [0mtype[0m [0;32mis[0m [0mspecified[0m [0mthen[0m [0mthe[0m [0mitk[0m[0;34m:[0m[0;34m:[0m[0mConvertPixelBuffer[0m [0mwill[0m [0mbe[0m [0mused[0m [0mto[0m [0mconvert[0m [0mthe[0m [0mpixels[0m[0;34m.[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   8435[0m [0;34m[0m[0m
+[1;32m   8436[0m [0;34m[0m[0m
+[1;32m   8437[0m         """
+[0;32m-> 8438[0;31m         [0;32mreturn[0m [0m_SimpleITK[0m[0;34m.[0m[0mImageFileReader_Execute[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;31mRuntimeError[0m: Exception thrown in SimpleITK ImageFileReader_Execute: /Users/runner/work/1/sitk/Code/IO/src/sitkImageReaderBase.cxx:97:
+sitk::ERROR: The file "https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com/image_volumes/Allen-CCF-2020/20230630/average_template_10.nii.gz" does not exist.
+

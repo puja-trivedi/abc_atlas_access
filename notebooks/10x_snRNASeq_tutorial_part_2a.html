@@ -1,0 +1,970 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10x scRNA-seq gene expression data (part 2a) &#8212; Allen Brain Cell Atlas - Data Access</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/10x_snRNASeq_tutorial_part_2a';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/allen_logo.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/allen_logo.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Allen Brain Cell Atlas
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="getting_started.html">Getting started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv2.html">Whole mouse brain 10Xv2 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv3.html">Whole mouse brain 10Xv3 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cluster_annotation_tutorial.html">10x scRNA-seq clustering analysis and annotation (CCN20230504)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cluster_neighborhood_gallery.html">Cell type neighborhood gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ccf_and_parcellation_annotation_tutorial.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merfish_ccf_registration_tutorial.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/10x_snRNASeq_tutorial_part_2a.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/10x_snRNASeq_tutorial_part_2a.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>10x scRNA-seq gene expression data (part 2a)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-expression-matrices">Gene expression matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-use-cases">Example use cases</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="x-scrna-seq-gene-expression-data-part-2a">
+<h1>10x scRNA-seq gene expression data (part 2a)<a class="headerlink" href="#x-scrna-seq-gene-expression-data-part-2a" title="Permalink to this headline">#</a></h1>
+<p>In part 1, we explore two examples looking at the expression of canonical neurotransmitter transporter genes and gene Tac2 in the thalamus. In this notebook, we will prepare data so that we can repeat the examples for all cells spanning the whole brain. This notebook takes ~ 5 minutes to run.</p>
+<p>The results from this notebook has already been cached and saved. As such, you can skip this notebook and continue with part 2b.</p>
+<p>You need to be connected to the internet to run this notebook and that you have downloaded the all the log2 expression matrices associated with both the WMB-10Xv2 and WMB-10Xv3 datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">anndata</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The prerequisite for running this notebook is that the data have been downloaded to local directory maintaining the organization from the manifest.json. <strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="s1">&#39;https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com&#39;</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com/releases/20230630/manifest.json&#39;</span>
+<span class="n">manifest</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    
+<span class="n">metadata</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;file_listing&#39;</span><span class="p">][</span><span class="s1">&#39;WMB-10X&#39;</span><span class="p">][</span><span class="s1">&#39;metadata&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">view_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">download_base</span><span class="p">,</span> 
+                               <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">][</span><span class="s1">&#39;WMB-10X&#39;</span><span class="p">][</span><span class="s1">&#39;directories&#39;</span><span class="p">][</span><span class="s1">&#39;metadata&#39;</span><span class="p">][</span><span class="s1">&#39;relative_path&#39;</span><span class="p">],</span> 
+                              <span class="s1">&#39;views&#39;</span><span class="p">)</span>
+<span class="n">cache_views</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">if</span> <span class="n">cache_views</span> <span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span> <span class="n">view_directory</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rpath</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;cell_metadata&#39;</span><span class="p">][</span><span class="s1">&#39;files&#39;</span><span class="p">][</span><span class="s1">&#39;csv&#39;</span><span class="p">][</span><span class="s1">&#39;relative_path&#39;</span><span class="p">]</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">download_base</span><span class="p">,</span> <span class="n">rpath</span><span class="p">)</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="gene-expression-matrices">
+<h2>Gene expression matrices<a class="headerlink" href="#gene-expression-matrices" title="Permalink to this headline">#</a></h2>
+<p>The large 4 million cell dataset has been divided into 23 packages to make data transfer and download more efficient. Each package is formatted as annadata h5ad file with minimal metadata. In this next section, we provide example code on how to open the file and connect with the rich cell level metadata discussed above.</p>
+<p>For each subset, there are two h5ad files one storing the raw counts and the other log normalization of it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrices</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;dataset_label&#39;</span><span class="p">,</span><span class="s1">&#39;matrix_label&#39;</span><span class="p">])[[</span><span class="s1">&#39;library_label&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">matrices</span><span class="o">.</span><span class="n">columns</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cell_count&#39;</span><span class="p">]</span>
+<span class="n">matrices</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>cell_count</th>
+    </tr>
+    <tr>
+      <th>dataset_label</th>
+      <th>matrix_label</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="10" valign="top">WMB-10Xv2</th>
+      <th>WMB-10Xv2-CTXsp</th>
+      <td>44310</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv2-HPF</th>
+      <td>208299</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv2-HY</th>
+      <td>100562</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv2-Isocortex-1</th>
+      <td>250040</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv2-Isocortex-2</th>
+      <td>250040</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv2-Isocortex-3</th>
+      <td>250040</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv2-Isocortex-4</th>
+      <td>250040</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv2-MB</th>
+      <td>29891</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv2-OLF</th>
+      <td>193723</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv2-TH</th>
+      <td>131212</td>
+    </tr>
+    <tr>
+      <th rowspan="13" valign="top">WMB-10Xv3</th>
+      <th>WMB-10Xv3-CB</th>
+      <td>182026</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv3-CTXsp</th>
+      <td>78464</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv3-HPF</th>
+      <td>181653</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv3-HY</th>
+      <td>162869</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv3-Isocortex-1</th>
+      <td>228229</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv3-Isocortex-2</th>
+      <td>228228</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv3-MB</th>
+      <td>337972</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv3-MY</th>
+      <td>192498</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv3-OLF</th>
+      <td>89244</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv3-P</th>
+      <td>143661</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv3-PAL</th>
+      <td>108677</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv3-STR</th>
+      <td>285167</td>
+    </tr>
+    <tr>
+      <th>WMB-10Xv3-TH</th>
+      <td>130856</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="example-use-cases">
+<h2>Example use cases<a class="headerlink" href="#example-use-cases" title="Permalink to this headline">#</a></h2>
+<p>In this section, we explore two use cases. The first example looks at the expression of nine canonical neurotransmitter transporter genes and the second the expression of gene Tac2.</p>
+<p>To support these use cases, we will create a smaller submatrix (all cells and 10 genes) and write to file for resue in part 2b. <em>Note this operation takes around 5 minutes</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrix_label</span> <span class="o">=</span> <span class="n">matrices</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">dataset_label</span> <span class="o">=</span> <span class="n">matrices</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">expression_matrices</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;file_listing&#39;</span><span class="p">][</span><span class="n">dataset_label</span><span class="p">][</span><span class="s1">&#39;expression_matrices&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">expression_matrices</span><span class="p">[</span><span class="n">matrix_label</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;log2&#39;: {&#39;files&#39;: {&#39;h5ad&#39;: {&#39;version&#39;: &#39;20230630&#39;, &#39;relative_path&#39;: &#39;expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-CTXsp-log2.h5ad&#39;, &#39;url&#39;: &#39;https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-CTXsp-log2.h5ad&#39;, &#39;size&#39;: 1730035350}}}, &#39;raw&#39;: {&#39;files&#39;: {&#39;h5ad&#39;: {&#39;version&#39;: &#39;20230630&#39;, &#39;relative_path&#39;: &#39;expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-CTXsp-raw.h5ad&#39;, &#39;url&#39;: &#39;https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-CTXsp-raw.h5ad&#39;, &#39;size&#39;: 1730035350}}}}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rpath</span> <span class="o">=</span> <span class="n">expression_matrices</span><span class="p">[</span><span class="n">matrix_label</span><span class="p">][</span><span class="s1">&#39;log2&#39;</span><span class="p">][</span><span class="s1">&#39;files&#39;</span><span class="p">][</span><span class="s1">&#39;h5ad&#39;</span><span class="p">][</span><span class="s1">&#39;relative_path&#39;</span><span class="p">]</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">download_base</span><span class="p">,</span> <span class="n">rpath</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-CTXsp-log2.h5ad
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ad</span> <span class="o">=</span> <span class="n">anndata</span><span class="o">.</span><span class="n">read_h5ad</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="n">backed</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">gene</span> <span class="o">=</span> <span class="n">ad</span><span class="o">.</span><span class="n">var</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ad</span> <span class="o">=</span> <span class="n">anndata</span><span class="o">.</span><span class="n">read_h5ad</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="n">backed</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">gene</span> <span class="o">=</span> <span class="n">ad</span><span class="o">.</span><span class="n">var</span>
+
+<span class="nn">File ~/miniconda3/envs/jupyter_book/lib/python3.9/site-packages/anndata/_io/h5ad.py:197,</span> in <span class="ni">read_h5ad</span><span class="nt">(filename, backed, as_sparse, as_sparse_fmt, chunk_size)</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span>         <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;r+&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span>     <span class="k">assert</span> <span class="n">mode</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;r+&quot;</span><span class="p">}</span>
+<span class="ne">--&gt; </span><span class="mi">197</span>     <span class="k">return</span> <span class="n">read_h5ad_backed</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">199</span> <span class="k">if</span> <span class="n">as_sparse_fmt</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">,</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csc_matrix</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span>     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span>         <span class="s2">&quot;Dense formats can only be read to CSR or CSC matrices at this time.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span>     <span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/jupyter_book/lib/python3.9/site-packages/anndata/_io/h5ad.py:128,</span> in <span class="ni">read_h5ad_backed</span><span class="nt">(filename, mode)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span> <span class="k">def</span> <span class="nf">read_h5ad_backed</span><span class="p">(</span><span class="n">filename</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">mode</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;r+&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">AnnData</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span>     <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">128</span>     <span class="n">f</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="n">attributes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;obsm&quot;</span><span class="p">,</span> <span class="s2">&quot;varm&quot;</span><span class="p">,</span> <span class="s2">&quot;obsp&quot;</span><span class="p">,</span> <span class="s2">&quot;varp&quot;</span><span class="p">,</span> <span class="s2">&quot;uns&quot;</span><span class="p">,</span> <span class="s2">&quot;layers&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="n">df_attributes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;obs&quot;</span><span class="p">,</span> <span class="s2">&quot;var&quot;</span><span class="p">]</span>
+
+<span class="nn">File ~/miniconda3/envs/jupyter_book/lib/python3.9/site-packages/h5py/_hl/files.py:567,</span> in <span class="ni">File.__init__</span><span class="nt">(self, name, mode, driver, libver, userblock_size, swmr, rdcc_nslots, rdcc_nbytes, rdcc_w0, track_order, fs_strategy, fs_persist, fs_threshold, fs_page_size, page_buf_size, min_meta_keep, min_raw_keep, locking, alignment_threshold, alignment_interval, meta_block_size, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">558</span>     <span class="n">fapl</span> <span class="o">=</span> <span class="n">make_fapl</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">libver</span><span class="p">,</span> <span class="n">rdcc_nslots</span><span class="p">,</span> <span class="n">rdcc_nbytes</span><span class="p">,</span> <span class="n">rdcc_w0</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">559</span>                      <span class="n">locking</span><span class="p">,</span> <span class="n">page_buf_size</span><span class="p">,</span> <span class="n">min_meta_keep</span><span class="p">,</span> <span class="n">min_raw_keep</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">560</span>                      <span class="n">alignment_threshold</span><span class="o">=</span><span class="n">alignment_threshold</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">561</span>                      <span class="n">alignment_interval</span><span class="o">=</span><span class="n">alignment_interval</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">562</span>                      <span class="n">meta_block_size</span><span class="o">=</span><span class="n">meta_block_size</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">563</span>                      <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">564</span>     <span class="n">fcpl</span> <span class="o">=</span> <span class="n">make_fcpl</span><span class="p">(</span><span class="n">track_order</span><span class="o">=</span><span class="n">track_order</span><span class="p">,</span> <span class="n">fs_strategy</span><span class="o">=</span><span class="n">fs_strategy</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">565</span>                      <span class="n">fs_persist</span><span class="o">=</span><span class="n">fs_persist</span><span class="p">,</span> <span class="n">fs_threshold</span><span class="o">=</span><span class="n">fs_threshold</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">566</span>                      <span class="n">fs_page_size</span><span class="o">=</span><span class="n">fs_page_size</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">567</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">make_fid</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">userblock_size</span><span class="p">,</span> <span class="n">fapl</span><span class="p">,</span> <span class="n">fcpl</span><span class="p">,</span> <span class="n">swmr</span><span class="o">=</span><span class="n">swmr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">569</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">libver</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">570</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_libver</span> <span class="o">=</span> <span class="n">libver</span>
+
+<span class="nn">File ~/miniconda3/envs/jupyter_book/lib/python3.9/site-packages/h5py/_hl/files.py:231,</span> in <span class="ni">make_fid</span><span class="nt">(name, mode, userblock_size, fapl, fcpl, swmr)</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="k">if</span> <span class="n">swmr</span> <span class="ow">and</span> <span class="n">swmr_support</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span>         <span class="n">flags</span> <span class="o">|=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_SWMR_READ</span>
+<span class="ne">--&gt; </span><span class="mi">231</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;r+&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_RDWR</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
+
+<span class="nn">File h5py/_objects.pyx:54,</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">File h5py/_objects.pyx:55,</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">File h5py/h5f.pyx:106,</span> in <span class="ni">h5py.h5f.open</span><span class="nt">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] Unable to open file (unable to open file: name = &#39;https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-CTXsp-log2.h5ad&#39;, errno = 2, error message = &#39;No such file or directory&#39;, flags = 0, o_flags = 0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ntgenes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Slc17a7&#39;</span><span class="p">,</span><span class="s1">&#39;Slc17a6&#39;</span><span class="p">,</span><span class="s1">&#39;Slc17a8&#39;</span><span class="p">,</span><span class="s1">&#39;Slc32a1&#39;</span><span class="p">,</span><span class="s1">&#39;Slc6a5&#39;</span><span class="p">,</span><span class="s1">&#39;Slc18a3&#39;</span><span class="p">,</span><span class="s1">&#39;Slc6a3&#39;</span><span class="p">,</span><span class="s1">&#39;Slc6a4&#39;</span><span class="p">,</span><span class="s1">&#39;Slc6a2&#39;</span><span class="p">]</span>
+<span class="n">exgenes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tac2&#39;</span><span class="p">]</span>
+<span class="n">gnames</span> <span class="o">=</span> <span class="n">ntgenes</span> <span class="o">+</span> <span class="n">exgenes</span>
+<span class="n">pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="ow">in</span> <span class="n">gnames</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gene</span><span class="o">.</span><span class="n">gene_symbol</span><span class="p">]</span>
+<span class="n">gene_filtered</span> <span class="o">=</span> <span class="n">gene</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span>
+<span class="n">gene_filtered</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gene_symbol</th>
+    </tr>
+    <tr>
+      <th>gene_identifier</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ENSMUSG00000037771</th>
+      <td>Slc32a1</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000070570</th>
+      <td>Slc17a7</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000039728</th>
+      <td>Slc6a5</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000030500</th>
+      <td>Slc17a6</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000055368</th>
+      <td>Slc6a2</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000019935</th>
+      <td>Slc17a8</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000025400</th>
+      <td>Tac2</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000020838</th>
+      <td>Slc6a4</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000021609</th>
+      <td>Slc6a3</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000100241</th>
+      <td>Slc18a3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create empty gene expression dataframe</span>
+<span class="n">gdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">cell</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="n">gene_filtered</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">total_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">matindex</span> <span class="ow">in</span> <span class="n">matrices</span><span class="o">.</span><span class="n">index</span> <span class="p">:</span>
+    
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">matindex</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">mp</span> <span class="o">=</span> <span class="n">matindex</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">mp</span><span class="p">)</span>
+    
+    <span class="n">expression_matrices</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;file_listing&#39;</span><span class="p">][</span><span class="n">ds</span><span class="p">][</span><span class="s1">&#39;expression_matrices&#39;</span><span class="p">]</span>
+    <span class="n">rpath</span> <span class="o">=</span> <span class="n">expression_matrices</span><span class="p">[</span><span class="n">mp</span><span class="p">][</span><span class="s1">&#39;log2&#39;</span><span class="p">][</span><span class="s1">&#39;files&#39;</span><span class="p">][</span><span class="s1">&#39;h5ad&#39;</span><span class="p">][</span><span class="s1">&#39;relative_path&#39;</span><span class="p">]</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">download_base</span><span class="p">,</span> <span class="n">rpath</span><span class="p">)</span>
+    
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
+    <span class="n">ad</span> <span class="o">=</span> <span class="n">anndata</span><span class="o">.</span><span class="n">read_h5ad</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="n">backed</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">exp</span> <span class="o">=</span> <span class="n">ad</span><span class="p">[:,</span><span class="n">gene_filtered</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+    <span class="n">gdata</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">exp</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">gene_filtered</span><span class="o">.</span><span class="n">index</span> <span class="p">]</span> <span class="o">=</span> <span class="n">exp</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; - time taken: &quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+    
+    <span class="n">ad</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">del</span> <span class="n">ad</span>
+    
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="c1">#if count &gt; 2 :</span>
+    <span class="c1">#    break</span>
+        
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;total time taken: &quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span> <span class="o">-</span> <span class="n">total_start</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10Xv2-CTXsp
+ - time taken:  3.4075560010000014
+WMB-10Xv2-HPF
+ - time taken:  5.991598056000001
+WMB-10Xv2-HY
+ - time taken:  2.836946846
+WMB-10Xv2-Isocortex-1
+ - time taken:  8.570017657999998
+WMB-10Xv2-Isocortex-2
+ - time taken:  9.148307593999998
+WMB-10Xv2-Isocortex-3
+ - time taken:  8.741186114999998
+WMB-10Xv2-Isocortex-4
+ - time taken:  10.756804523
+WMB-10Xv2-MB
+ - time taken:  0.8745386949999983
+WMB-10Xv2-OLF
+ - time taken:  5.647679334999999
+WMB-10Xv2-TH
+ - time taken:  4.524794286000002
+WMB-10Xv3-CB
+ - time taken:  6.994075285000008
+WMB-10Xv3-CTXsp
+ - time taken:  3.5657762849999983
+WMB-10Xv3-HPF
+ - time taken:  9.283738147999998
+WMB-10Xv3-HY
+ - time taken:  8.528782673999999
+WMB-10Xv3-Isocortex-1
+ - time taken:  15.283968703
+WMB-10Xv3-Isocortex-2
+ - time taken:  10.536834611000003
+WMB-10Xv3-MB
+ - time taken:  17.129760139
+WMB-10Xv3-MY
+ - time taken:  7.738172029999987
+WMB-10Xv3-OLF
+ - time taken:  2.9440470669999854
+WMB-10Xv3-P
+ - time taken:  6.285429681000011
+WMB-10Xv3-PAL
+ - time taken:  4.700074655999998
+WMB-10Xv3-STR
+ - time taken:  15.398211283000023
+WMB-10Xv3-TH
+ - time taken:  6.615804747999988
+total time taken:  175.530974577
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change columns from index to gene symbol</span>
+<span class="n">gdata</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">gene_filtered</span><span class="o">.</span><span class="n">gene_symbol</span>
+<span class="n">pred</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">gdata</span><span class="p">[</span><span class="n">gdata</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">gdata</span> <span class="o">=</span> <span class="n">gdata</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">gdata</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4057701
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">cache_views</span> <span class="p">:</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">view_directory</span><span class="p">,</span> <span class="s1">&#39;example_genes_all_cells_expression.csv&#39;</span><span class="p">)</span>
+    <span class="n">gdata</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span> <span class="n">file</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-expression-matrices">Gene expression matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-use-cases">Example use cases</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
