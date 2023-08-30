@@ -40,7 +40,7 @@ reading average_template_10
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mRuntimeError[0m                              Traceback (most recent call last)
-[0;32m/var/folders/sd/7d15v2v168sd396gsdjsn8j00000gn/T/ipykernel_2560/3208147646.py[0m in [0;36m?[0;34m()[0m
+[0;32m/var/folders/sd/7d15v2v168sd396gsdjsn8j00000gn/T/ipykernel_3762/3208147646.py[0m in [0;36m?[0;34m()[0m
 [0;32m----> 4[0;31m [0mprint[0m[0;34m([0m[0;34m"reading average_template_10"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      5[0m [0mrpath[0m [0;34m=[0m [0mvolumes[0m[0;34m[[0m[0;34m'average_template_10'[0m[0;34m][0m[0;34m[[0m[0;34m'files'[0m[0;34m][0m[0;34m[[0m[0;34m'nii.gz'[0m[0;34m][0m[0;34m[[0m[0;34m'relative_path'[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 [1;32m      6[0m [0mfile[0m [0;34m=[0m [0mos[0m[0;34m.[0m[0mpath[0m[0;34m.[0m[0mjoin[0m[0;34m([0m [0mdownload_base[0m[0;34m,[0m [0mrpath[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

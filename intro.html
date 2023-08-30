@@ -153,19 +153,30 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="notebooks/getting_started.html">Getting started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="descriptions/WMB-10Xv2.html">Whole mouse brain 10Xv2 single cell transcriptomes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="descriptions/WMB-10Xv3.html">Whole mouse brain 10Xv3 single cell transcriptomes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
-<li class="toctree-l2"><a class="reference internal" href="descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/getting_started.html">Getting started</a></li>
 </ul>
-</li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA RELEASE INFORMATION</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="descriptions/WMB-10Xv2.html">Whole mouse brain 10Xv2 single cell transcriptomes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptions/WMB-10Xv3.html">Whole mouse brain 10Xv3 single cell transcriptomes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">TUTORIAL NOTEBOOKS</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks/cluster_annotation_tutorial.html">10x scRNA-seq clustering analysis and annotation (CCN20230504)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_1.html">10x scRNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2a.html">10x scRNA-seq gene expression data (part 2a)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2b.html">10x scRNA-seq gene expression data (part 2b)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/cluster_neighborhood_gallery.html">Cell type neighborhood gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/ccf_and_parcellation_annotation_tutorial.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
@@ -365,7 +376,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-notebooks">Available notebooks:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-of-support">Level of support</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -428,9 +441,34 @@ the 10x transcriptomics datasets have been subdivided into smaller packages grou
 <div class="section" id="table-of-contents">
 <h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h2>
 <div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/getting_started.html">Getting started</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA RELEASE INFORMATION</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="descriptions/WMB-10Xv2.html">Whole mouse brain 10Xv2 single cell transcriptomes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptions/WMB-10Xv3.html">Whole mouse brain 10Xv3 single cell transcriptomes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">TUTORIAL NOTEBOOKS</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/cluster_annotation_tutorial.html">10x scRNA-seq clustering analysis and annotation (CCN20230504)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_1.html">10x scRNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2a.html">10x scRNA-seq gene expression data (part 2a)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2b.html">10x scRNA-seq gene expression data (part 2b)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/cluster_neighborhood_gallery.html">Cell type neighborhood gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/ccf_and_parcellation_annotation_tutorial.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
@@ -500,7 +538,9 @@ the 10x transcriptomics datasets have been subdivided into smaller packages grou
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-notebooks">Available notebooks:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-of-support">Level of support</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
 </ul>
   </nav></div>
 
