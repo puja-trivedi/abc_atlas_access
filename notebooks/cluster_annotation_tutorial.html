@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>10x RNA-seq clustering analysis and annotation (CCN20230722) &#8212; Allen Brain Cell Atlas - Data Access</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -65,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="10x scRNA-seq gene expression data" href="../descriptions/notebook_subtitle2.html" />
     <link rel="prev" title="Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)" href="../descriptions/notebook_subtitle1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -439,8 +441,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="x-rna-seq-clustering-analysis-and-annotation-ccn20230722">
-<h1>10x RNA-seq clustering analysis and annotation (CCN20230722)<a class="headerlink" href="#x-rna-seq-clustering-analysis-and-annotation-ccn20230722" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="x-rna-seq-clustering-analysis-and-annotation-ccn20230722">
+<h1>10x RNA-seq clustering analysis and annotation (CCN20230722)<a class="headerlink" href="#x-rna-seq-clustering-analysis-and-annotation-ccn20230722" title="Permalink to this heading">#</a></h1>
 <p>A set of 819 10X single cell or nuclues RNA-seq libraries were generated from anatomically defined tissue microdissections in adult mouse brains, resulting in a dataset of ~7.0 million single-cell transcriptomes. An iterative clustering analysis (scrattch.bigcat package) was conducted on ~4.3 milion QC-qualified cells resulting ~5300 clusters. The clusters where then computationally grouped into ~300 subclasses. A detailed analysis of all the subclasses and clusters was conducted. During this process, low quality noisy clusters (usally doublets or mixed debris) were identified and removed resulting a final set of 5322 clusters containing a total ~4.0 million high-quality single-cell transcriptomes.</p>
 <p>To organize the complex molecular relationships, a hierarchical representation of cell types was defined with 4 nested levels of classification: class, subclass, supertype and clusters. Further neurotransmitter identity was assigned to each cluster based on expression of canonical neurotransmitter transporter genes. See <a class="reference external" href="https://doi.org/10.1101/2023.03.06.531121">Yao et al</a> for further details about the data, methods and results.</p>
 <p>The purpose of this notebook is to provide an overview of how cluster and cluster annotation information is represented through example use cases.</p>
@@ -493,10 +495,10 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="data-overview">
-<h2>Data Overview<a class="headerlink" href="#data-overview" title="Permalink to this headline">#</a></h2>
-<div class="section" id="clusters">
-<h3>Clusters<a class="headerlink" href="#clusters" title="Permalink to this headline">#</a></h3>
+<section id="data-overview">
+<h2>Data Overview<a class="headerlink" href="#data-overview" title="Permalink to this heading">#</a></h2>
+<section id="clusters">
+<h3>Clusters<a class="headerlink" href="#clusters" title="Permalink to this heading">#</a></h3>
 <p>Each of the final set of 5196 cluster is associated with an alias and label. Each row of the dataframe represnts a <em><strong>cluster</strong></em>. Each <em>cluster</em> has a <em>label</em> (human readable string that is unique in the database), <em>cluster alias</em> (in this case a simple integer) and the <em>number of cells</em> that has been grouped into the cluster.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -570,9 +572,9 @@ document.write(`
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="cluster-annotation-term-sets">
-<h3>Cluster annotation term sets<a class="headerlink" href="#cluster-annotation-term-sets" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="cluster-annotation-term-sets">
+<h3>Cluster annotation term sets<a class="headerlink" href="#cluster-annotation-term-sets" title="Permalink to this heading">#</a></h3>
 <p>Each level of classification is represented as a <em><strong>cluster annotation term set</strong></em>. Each term set consists of a set of ordered terms. Each term set has a <em>label</em> (human readable string that is unique in the database), a <em>name</em>, <em>description</em> and <em>order</em> among the term sets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -682,9 +684,9 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="cluster-annotation-terms">
-<h3>Cluster annotation terms<a class="headerlink" href="#cluster-annotation-terms" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="cluster-annotation-terms">
+<h3>Cluster annotation terms<a class="headerlink" href="#cluster-annotation-terms" title="Permalink to this heading">#</a></h3>
 <p>A <em><strong>cluster annotation term</strong></em> represents a group within a single level of classification. Each term object has a <em>label</em> (human readable string that is unique in the database), a <em>name</em>, which <em>cluster annotation term set</em> it belongs to and a <em>parent</em> or superclass if the term forms a heirarchy, an order within a <em>term set</em> and a <em>color</em> for visualization purposes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1036,9 +1038,9 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="cluster-to-cluster-annotation-membership">
-<h3>Cluster to cluster annotation membership<a class="headerlink" href="#cluster-to-cluster-annotation-membership" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="cluster-to-cluster-annotation-membership">
+<h3>Cluster to cluster annotation membership<a class="headerlink" href="#cluster-to-cluster-annotation-membership" title="Permalink to this heading">#</a></h3>
 <p>The association between a <em><strong>cluster</strong></em> and <em><strong>cluster annotation term</strong></em> is represented as a <em><strong>cluster to cluster annotation membership</strong></em> within the context of one <em><strong>cluster annotation term set</strong></em>. It is expected that a cluster in only associated with one term within a specific term set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1132,12 +1134,12 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="example-use-cases">
-<h2>Example use cases<a class="headerlink" href="#example-use-cases" title="Permalink to this headline">#</a></h2>
-<div class="section" id="aggregating-cluster-and-cells-counts-per-term">
-<h3>Aggregating cluster and cells counts per term<a class="headerlink" href="#aggregating-cluster-and-cells-counts-per-term" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="example-use-cases">
+<h2>Example use cases<a class="headerlink" href="#example-use-cases" title="Permalink to this heading">#</a></h2>
+<section id="aggregating-cluster-and-cells-counts-per-term">
+<h3>Aggregating cluster and cells counts per term<a class="headerlink" href="#aggregating-cluster-and-cells-counts-per-term" title="Permalink to this heading">#</a></h3>
 <p>We can obtain cluster and cell counts per cluster annotation term using the pandas groupby function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1378,8 +1380,8 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 </div>
 </div>
 </div>
-<div class="section" id="neurotransmitter-cluster-and-cell-counts">
-<h4>Neurotransmitter cluster and  cell counts<a class="headerlink" href="#neurotransmitter-cluster-and-cell-counts" title="Permalink to this headline">#</a></h4>
+<section id="neurotransmitter-cluster-and-cell-counts">
+<h4>Neurotransmitter cluster and  cell counts<a class="headerlink" href="#neurotransmitter-cluster-and-cell-counts" title="Permalink to this heading">#</a></h4>
 <p>The majority of clusters and cells are of glutamatergic, GABAergic or GABA-glycinergic neurotransmitter types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1400,9 +1402,9 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 <img alt="../_images/132ba0a18cb8dad7161e3c38554fa94d198a64786b84c4867162045c387cf2f0.png" src="../_images/132ba0a18cb8dad7161e3c38554fa94d198a64786b84c4867162045c387cf2f0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="class-level-cluster-and-cell-counts">
-<h4>Class level cluster and cell counts<a class="headerlink" href="#class-level-cluster-and-cell-counts" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="class-level-cluster-and-cell-counts">
+<h4>Class level cluster and cell counts<a class="headerlink" href="#class-level-cluster-and-cell-counts" title="Permalink to this heading">#</a></h4>
 <p>Class “18 MB Glut” contains the largest number of clusters (&gt;600), while class “01 IT-ET Glut” contains the largest number of cells (&gt;1.0 million).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1414,10 +1416,10 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 <img alt="../_images/b8b19c302b454d09c926bb73da82954023c4e9d1cf2632932e17aa666cc00458.png" src="../_images/b8b19c302b454d09c926bb73da82954023c4e9d1cf2632932e17aa666cc00458.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="visualizing-cluster-and-term-distributions">
-<h3>Visualizing cluster and term distributions<a class="headerlink" href="#visualizing-cluster-and-term-distributions" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="visualizing-cluster-and-term-distributions">
+<h3>Visualizing cluster and term distributions<a class="headerlink" href="#visualizing-cluster-and-term-distributions" title="Permalink to this heading">#</a></h3>
 <p>We can explore the relationship and distribution of clusters between term sets by creating a pivot table using pandas groupby fuunction. Each row of the resulting dataframe represents a cluster, each column represents a term set and the value in the table is the name of the term that has been associated with the cluster for that specific term set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1750,8 +1752,8 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 </div>
 </div>
 </div>
-<div class="section" id="distribution-of-neurotransmitter-clusters-in-each-class">
-<h4>Distribution of neurotransmitter clusters in each class<a class="headerlink" href="#distribution-of-neurotransmitter-clusters-in-each-class" title="Permalink to this headline">#</a></h4>
+<section id="distribution-of-neurotransmitter-clusters-in-each-class">
+<h4>Distribution of neurotransmitter clusters in each class<a class="headerlink" href="#distribution-of-neurotransmitter-clusters-in-each-class" title="Permalink to this heading">#</a></h4>
 <p>At the next level of classification, around 50% of the classes are have a single neurotransmitter identity and remaining 50% are of mixed types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1764,10 +1766,10 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 <img alt="../_images/60da77edc3753e273a1df0a03a72494d2b4763cb983f94f2e7cb73550f37f46c.png" src="../_images/60da77edc3753e273a1df0a03a72494d2b4763cb983f94f2e7cb73550f37f46c.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="visualizing-the-mouse-whole-brain-taxonomy">
-<h3>Visualizing the mouse whole brain taxonomy<a class="headerlink" href="#visualizing-the-mouse-whole-brain-taxonomy" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="visualizing-the-mouse-whole-brain-taxonomy">
+<h3>Visualizing the mouse whole brain taxonomy<a class="headerlink" href="#visualizing-the-mouse-whole-brain-taxonomy" title="Permalink to this heading">#</a></h3>
 <p>Term sets: class, subclass, supertype and cluster forms a four level mouse whole brain taxonomy. We can visualized the taxonomy as a sunburst diagram that shows the single inheritance hierarchy through a series of rings, that are sliced for each annotation term. Each ring corresponds to a level in the hierarchy. We have ordered the rings so that the class level is the outer most ring so that we can add in labels. Rings are sliced up and divided based on their hierarchical relationship to the parent slice. The angle of each slice is proportional to the number of clusters belonging to the term.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1802,9 +1804,9 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 <img alt="../_images/67f09942297f27a7653308a250b9fcf975ff19026edd6275842781a85ab94c55.png" src="../_images/67f09942297f27a7653308a250b9fcf975ff19026edd6275842781a85ab94c55.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

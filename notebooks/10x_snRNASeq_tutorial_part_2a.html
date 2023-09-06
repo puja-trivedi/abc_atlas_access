@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>10x RNA-seq gene expression data (part 2a) &#8212; Allen Brain Cell Atlas - Data Access</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -65,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="10x RNA-seq gene expression data (part 2b)" href="10x_snRNASeq_tutorial_part_2b.html" />
     <link rel="prev" title="10x RNA-seq gene expression data (part 1)" href="10x_snRNASeq_tutorial_part_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -421,8 +423,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="x-rna-seq-gene-expression-data-part-2a">
-<h1>10x RNA-seq gene expression data (part 2a)<a class="headerlink" href="#x-rna-seq-gene-expression-data-part-2a" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="x-rna-seq-gene-expression-data-part-2a">
+<h1>10x RNA-seq gene expression data (part 2a)<a class="headerlink" href="#x-rna-seq-gene-expression-data-part-2a" title="Permalink to this heading">#</a></h1>
 <p>In part 1, we explore two examples looking at the expression of canonical neurotransmitter transporter genes and gene Tac2 in the thalamus. In this notebook, we will prepare data so that we can repeat the examples for all cells spanning the whole brain. This notebook takes ~ 5 minutes to run.</p>
 <p>The results from this notebook has already been cached and saved. As such, you can skip this notebook and continue with part 2b.</p>
 <p>You need to be connected to the internet to run this notebook and that you have downloaded the all the log2 expression matrices associated with both the WMB-10Xv2, WMB-10Xv3 and WMB-10XMulti datasets.</p>
@@ -483,8 +485,8 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="gene-expression-matrices">
-<h2>Gene expression matrices<a class="headerlink" href="#gene-expression-matrices" title="Permalink to this headline">#</a></h2>
+<section id="gene-expression-matrices">
+<h2>Gene expression matrices<a class="headerlink" href="#gene-expression-matrices" title="Permalink to this heading">#</a></h2>
 <p>The large 4 million cell dataset has been divided into 23 packages to make data transfer and download more efficient. Each package is formatted as annadata h5ad file with minimal metadata. In this next section, we provide example code on how to open the file and connect with the rich cell level metadata discussed above.</p>
 <p>For each subset, there are two h5ad files one storing the raw counts and the other log normalization of it.</p>
 <div class="cell docutils container">
@@ -627,9 +629,9 @@ document.write(`
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="example-use-cases">
-<h2>Example use cases<a class="headerlink" href="#example-use-cases" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="example-use-cases">
+<h2>Example use cases<a class="headerlink" href="#example-use-cases" title="Permalink to this heading">#</a></h2>
 <p>In this section, we explore two use cases. The first example looks at the expression of nine canonical neurotransmitter transporter genes and the second the expression of gene Tac2.</p>
 <p>To support these use cases, we will create a smaller submatrix (all cells and 10 genes) and write to file for resue in part 2b. <em>Note this operation takes around 5 minutes</em>.</p>
 <div class="cell docutils container">
@@ -871,8 +873,8 @@ total time taken:  213.870688637
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

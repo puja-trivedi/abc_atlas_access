@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>MERFISH CCF mapped coordinates &#8212; Allen Brain Cell Atlas - Data Access</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -65,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)" href="../descriptions/notebook_subtitle4.html" />
     <link rel="prev" title="Allen Mouse Common Coordinate Framework (2020 version)" href="ccf_and_parcellation_annotation_tutorial.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -426,8 +428,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="merfish-ccf-mapped-coordinates">
-<h1>MERFISH CCF mapped coordinates<a class="headerlink" href="#merfish-ccf-mapped-coordinates" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="merfish-ccf-mapped-coordinates">
+<h1>MERFISH CCF mapped coordinates<a class="headerlink" href="#merfish-ccf-mapped-coordinates" title="Permalink to this heading">#</a></h1>
 <p>Registration to the Allen CCFv3 was performed at 10 micron in-plane resolution. For each section, an anatomical label reference was created using class/subclass level cell type assignments which are then used to match to corresponding CCF parcellations. The midline was manually determined for each section to rotate the section upright and center in in the middle (<strong>section coordinates</strong>). This set of rectified images were stacked in sequential order to create an inital configuration for registration.</p>
 <p>The ANTS registration framework was use to establish a 2.5D deformable spatial mapping between the MERFISH data and <strong>CCF coordinates</strong> via three major steps: (1) A 3D global affine (12 dof) mapping was performed to align the CCF into the MERFISH space (<strong>resampled CCF</strong>); (2) 2D affine (6 dof) registration of each MERFISH section to match the target resampled CCF section and finally, (3) a 2D multi-scale, symmetric diffeomorphic registration of each section (<strong>reconstructed coordinates</strong>) to finer level match to the target CCF section. Global and section-wise mappings from each of these registration steps were preserved and concatenated (with appropriate inversions) to allow point-to-point mapping between the original MERFISH coordinate space and the CCF space. See <a class="reference external" href="https://doi.org/10.1101/2023.03.06.531121">Yao et al</a> for further details.</p>
 <p>The purpose of this notebook is to provide an overview of how the mapped coordinate information is represented through example use cases.</p>
@@ -479,8 +481,8 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="read-in-section-reconstructed-and-ccf-coordinates-for-all-cells">
-<h2>Read in section, reconstructed and CCF coordinates for all cells<a class="headerlink" href="#read-in-section-reconstructed-and-ccf-coordinates-for-all-cells" title="Permalink to this headline">#</a></h2>
+<section id="read-in-section-reconstructed-and-ccf-coordinates-for-all-cells">
+<h2>Read in section, reconstructed and CCF coordinates for all cells<a class="headerlink" href="#read-in-section-reconstructed-and-ccf-coordinates-for-all-cells" title="Permalink to this heading">#</a></h2>
 <p>Read in the expanded cell metadata table we created in part 1 of the MERFISH tutorial. To keep track of the three type of coordinates we will rename the <strong>section coordinates</strong> (x,y,z) in the dataframe to (x_section, y_section, z_section)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1240,9 +1242,9 @@ document.write(`
 <p>5 rows × 27 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="visualize-cells-in-section-reconstruced-and-ccf-coordinates">
-<h2>Visualize cells in section, reconstruced and CCF coordinates<a class="headerlink" href="#visualize-cells-in-section-reconstruced-and-ccf-coordinates" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="visualize-cells-in-section-reconstruced-and-ccf-coordinates">
+<h2>Visualize cells in section, reconstruced and CCF coordinates<a class="headerlink" href="#visualize-cells-in-section-reconstruced-and-ccf-coordinates" title="Permalink to this heading">#</a></h2>
 <p>We define a helper function to visualize cells in a section colorized by either cluster or annotation term and optionally with a boundary overlay</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1340,9 +1342,9 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 <img alt="../_images/5dc3d087ab6fcc3251b51dc7dd525128f5bf51e00efe0e93cda5b420ef1519a7.png" src="../_images/5dc3d087ab6fcc3251b51dc7dd525128f5bf51e00efe0e93cda5b420ef1519a7.png" />
 </div>
 </div>
-</div>
-<div class="section" id="associate-mapped-parcellation-and-parcellation-terms-to-the-merfish-data">
-<h2>Associate mapped parcellation and parcellation terms to the MERFISH data<a class="headerlink" href="#associate-mapped-parcellation-and-parcellation-terms-to-the-merfish-data" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="associate-mapped-parcellation-and-parcellation-terms-to-the-merfish-data">
+<h2>Associate mapped parcellation and parcellation terms to the MERFISH data<a class="headerlink" href="#associate-mapped-parcellation-and-parcellation-terms-to-the-merfish-data" title="Permalink to this heading">#</a></h2>
 <p>Read in the pivoted parcellation annotation information we create in the Allen CCFv3 tutorial and join with the cell metadata dataframe.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1735,9 +1737,9 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="visualize-cell-parcellation-assignment-at-different-anatomical-levels">
-<h2>Visualize cell parcellation assignment at different anatomical levels<a class="headerlink" href="#visualize-cell-parcellation-assignment-at-different-anatomical-levels" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="visualize-cell-parcellation-assignment-at-different-anatomical-levels">
+<h2>Visualize cell parcellation assignment at different anatomical levels<a class="headerlink" href="#visualize-cell-parcellation-assignment-at-different-anatomical-levels" title="Permalink to this heading">#</a></h2>
 <p>For example section “C57BL6J-638850.40”, we plot cells reconstructed coordinates colorized by parcellation assignment at the division and structure anatomical levels</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1789,9 +1791,9 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 <img alt="../_images/7b025a957ed72e1da22a068d14ddcb35ee0c54c5f2dd57495daba07a95c8eceb.png" src="../_images/7b025a957ed72e1da22a068d14ddcb35ee0c54c5f2dd57495daba07a95c8eceb.png" />
 </div>
 </div>
-</div>
-<div class="section" id="aggregate-cells-by-parcellation-assignment-at-different-anatomical-levels">
-<h2>Aggregate cells by parcellation assignment at different anatomical levels<a class="headerlink" href="#aggregate-cells-by-parcellation-assignment-at-different-anatomical-levels" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="aggregate-cells-by-parcellation-assignment-at-different-anatomical-levels">
+<h2>Aggregate cells by parcellation assignment at different anatomical levels<a class="headerlink" href="#aggregate-cells-by-parcellation-assignment-at-different-anatomical-levels" title="Permalink to this heading">#</a></h2>
 <p>Define a helper function to count the number of cells for each term and apply it to the division and structure anatomical levels</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2177,9 +2179,9 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="resampled-ccf-template-and-parcellations">
-<h2>Resampled CCF template and parcellations<a class="headerlink" href="#resampled-ccf-template-and-parcellations" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="resampled-ccf-template-and-parcellations">
+<h2>Resampled CCF template and parcellations<a class="headerlink" href="#resampled-ccf-template-and-parcellations" title="Permalink to this heading">#</a></h2>
 <p>The anatomical template, parcellation and boundary volume in resample CCF coordinates are also available for download for visualization and analysis</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2272,9 +2274,9 @@ origin: (5.476531505584717, 8.600000381469727, 6.435669422149658)
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="visualize-cells-with-parcellation-boundary-overlay">
-<h2>Visualize cells with parcellation boundary overlay<a class="headerlink" href="#visualize-cells-with-parcellation-boundary-overlay" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="visualize-cells-with-parcellation-boundary-overlay">
+<h2>Visualize cells with parcellation boundary overlay<a class="headerlink" href="#visualize-cells-with-parcellation-boundary-overlay" title="Permalink to this heading">#</a></h2>
 <p>For example section “C57BL6J-638850.40”, we first compute the corresponding z section in the resampled image volume and visualize the resampled average template, annotation and parcellation for that section</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2341,8 +2343,8 @@ origin: (5.476531505584717, 8.600000381469727, 6.435669422149658)
 <img alt="../_images/311f716dd5a98c24e3ff7d3ed2e375027a999cbba5f59483403f07fd8edff099.png" src="../_images/311f716dd5a98c24e3ff7d3ed2e375027a999cbba5f59483403f07fd8edff099.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

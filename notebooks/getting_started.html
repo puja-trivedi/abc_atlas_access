@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Getting started &#8212; Allen Brain Cell Atlas - Data Access</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -65,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)" href="../descriptions/data_release_subtitle1.html" />
     <link rel="prev" title="Allen Brain Cell Atlas - Data Access" href="../README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -427,8 +429,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="getting-started">
-<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
 <p>Data associated with the Allen Brain Cell Atlas is hosted on Amazon Web Services (AWS) in an S3 bucket as a AWS Public Dataset.
 No account or login is required. The S3 bucket is located here <a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html">arn:aws:s3:::allen-brain-cell-atlas</a>. You will need to be connected to the internet to run this notebook.</p>
 <p>Each release has an associated <strong>manifest.json</strong> which list all the specific version of directories and files that are part of the release. We recommend using the manifest as the starting point of data download and usage.</p>
@@ -447,8 +449,8 @@ No account or login is required. The S3 bucket is located here <a class="referen
 </div>
 </div>
 </div>
-<div class="section" id="using-the-file-manifest">
-<h2>Using the file manifest<a class="headerlink" href="#using-the-file-manifest" title="Permalink to this headline">#</a></h2>
+<section id="using-the-file-manifest">
+<h2>Using the file manifest<a class="headerlink" href="#using-the-file-manifest" title="Permalink to this heading">#</a></h2>
 <p>Let’s open the manifest.json file associated with the current release.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -556,9 +558,9 @@ metadata/Zhuang-C57BL6J-4-CCF/20230830 : 0.01 GB
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="downloading-files-for-the-tutorial-notebooks">
-<h2>Downloading files for the tutorial notebooks<a class="headerlink" href="#downloading-files-for-the-tutorial-notebooks" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="downloading-files-for-the-tutorial-notebooks">
+<h2>Downloading files for the tutorial notebooks<a class="headerlink" href="#downloading-files-for-the-tutorial-notebooks" title="Permalink to this heading">#</a></h2>
 <p>Suppose you would like to download data to your local path <em>../abc_download_root</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -567,8 +569,8 @@ metadata/Zhuang-C57BL6J-4-CCF/20230830 : 0.01 GB
 </div>
 </div>
 </div>
-<div class="section" id="downloading-all-metadata-directories">
-<h3>Downloading all metadata directories<a class="headerlink" href="#downloading-all-metadata-directories" title="Permalink to this headline">#</a></h3>
+<section id="downloading-all-metadata-directories">
+<h3>Downloading all metadata directories<a class="headerlink" href="#downloading-all-metadata-directories" title="Permalink to this heading">#</a></h3>
 <p>Since the metadata directories are relatively small we will download all the metadata directories. We loop through the manifest and download each metadata directory using  <strong><a class="reference external" href="https://aws.amazon.com/cli/">AWS CLI</a></strong> sync command. This should take &lt; 5 minutes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -615,9 +617,9 @@ aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-C57BL6
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="downloading-one-10x-expression-matrix">
-<h3>Downloading one 10x expression matrix<a class="headerlink" href="#downloading-one-10x-expression-matrix" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="downloading-one-10x-expression-matrix">
+<h3>Downloading one 10x expression matrix<a class="headerlink" href="#downloading-one-10x-expression-matrix" title="Permalink to this heading">#</a></h3>
 <p>The prerequisite to run the 10x part 1 notebook is to have downloaded the log2 version of the “‘WMB-10Xv2-TH’” matrix (4GB). Download takes ~ 1 min depending on your network speed.</p>
 <p>We define a simple helper function to create the require AWS command. You can copy the command into a terminal shell to run or optionally run it inside this notebook if you uncomment the “subprocess.run” line of code.</p>
 <div class="cell docutils container">
@@ -657,9 +659,9 @@ aws s3 cp --no-sign-request s3://allen-brain-cell-atlas/expression_matrices/WMB-
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="downloading-the-merfish-expression-matrix">
-<h3>Downloading the MERFISH expression matrix<a class="headerlink" href="#downloading-the-merfish-expression-matrix" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="downloading-the-merfish-expression-matrix">
+<h3>Downloading the MERFISH expression matrix<a class="headerlink" href="#downloading-the-merfish-expression-matrix" title="Permalink to this heading">#</a></h3>
 <p>The prerequisite to run the MERFISH part 1 notebook is to have downloaded the log2 version of the “C57BL6J-638850” matrix (7GB). Download takes ~3 mins depending on tour network speed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -709,9 +711,9 @@ aws s3 cp --no-sign-request s3://allen-brain-cell-atlas/expression_matrices/Zhua
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="downloading-all-image-volumes">
-<h3>Downloading all image volumes<a class="headerlink" href="#downloading-all-image-volumes" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="downloading-all-image-volumes">
+<h3>Downloading all image volumes<a class="headerlink" href="#downloading-all-image-volumes" title="Permalink to this heading">#</a></h3>
 <p>The prerequisite to run the CCF and MERFISH to CCF registration notebooks is to have downloaded the two set of image volumes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -746,9 +748,9 @@ aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/image_volumes/MERFISH-
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

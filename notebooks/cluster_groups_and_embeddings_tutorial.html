@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Cluster neighborhoods and embeddings &#8212; Allen Brain Cell Atlas - Data Access</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -65,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Cell type neighborhood gallery" href="cluster_neighborhood_gallery.html" />
     <link rel="prev" title="MERFISH whole brain spatial transcriptomics (part 2b)" href="merfish_tutorial_part_2b.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -432,8 +434,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="cluster-neighborhoods-and-embeddings">
-<h1>Cluster neighborhoods and embeddings<a class="headerlink" href="#cluster-neighborhoods-and-embeddings" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="cluster-neighborhoods-and-embeddings">
+<h1>Cluster neighborhoods and embeddings<a class="headerlink" href="#cluster-neighborhoods-and-embeddings" title="Permalink to this heading">#</a></h1>
 <p>To further investigate the neuronal diversity within each major brain structure, <a class="reference external" href="https://doi.org/10.1101/2023.03.06.531121">Yao et al</a> created concept of cell types “neighborhoods” or groups and use them for visualization and analysis. For each neighborhood, they genereated re-embedded UMAPS to reveal fine-grained relationships between neuronal types within and between brain regions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -481,10 +483,10 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="data-overview">
-<h2>Data Overview<a class="headerlink" href="#data-overview" title="Permalink to this headline">#</a></h2>
-<div class="section" id="cluster-groups">
-<h3>Cluster groups<a class="headerlink" href="#cluster-groups" title="Permalink to this headline">#</a></h3>
+<section id="data-overview">
+<h2>Data Overview<a class="headerlink" href="#data-overview" title="Permalink to this heading">#</a></h2>
+<section id="cluster-groups">
+<h3>Cluster groups<a class="headerlink" href="#cluster-groups" title="Permalink to this heading">#</a></h3>
 <p>Each cell type neighborhood is represented as a cluster group. Each row of the dataframe represnts a <em><strong>cluster group</strong></em>. Each <em>cluster</em> has a <em>label</em> (human readable string that is unique in the database), <em>name</em>, <em>description</em> and the <em>number of clusters</em> that has been grouped together.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -639,9 +641,9 @@ All cells in the whole mouse brain (5322 clusters)
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="cluster-group-membership">
-<h3>Cluster group membership<a class="headerlink" href="#cluster-group-membership" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="cluster-group-membership">
+<h3>Cluster group membership<a class="headerlink" href="#cluster-group-membership" title="Permalink to this heading">#</a></h3>
 <p>The association between a cluster and cluster group is represented as a cluster group membership.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -718,9 +720,9 @@ All cells in the whole mouse brain (5322 clusters)
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="dimension-reductions">
-<h3>Dimension reductions<a class="headerlink" href="#dimension-reductions" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="dimension-reductions">
+<h3>Dimension reductions<a class="headerlink" href="#dimension-reductions" title="Permalink to this heading">#</a></h3>
 <p>Principal component analysis (PCA) was first preformed on the gene expression matrix.
 The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold Approximation and Projection for Dimension Reduction) for all cells in the datasets. Further, for each neighborhood or cluster group, an additional specific 2D UMAP or embedding is created.</p>
 <p>Each row of the <em><strong>dimension reduction</strong></em> dataframe represents on embedding. Each row of the dataframe represnts an embedding. Each <em>dimension reduction</em> has a <em>label</em> (human readable string that is unique in the database), <em>name</em>, <em>description</em>, the <em>number of cells</em> in the embedding and the label of the associated <em>cluster group</em>.</p>
@@ -833,12 +835,12 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="example-use-cases">
-<h2>Example use cases<a class="headerlink" href="#example-use-cases" title="Permalink to this headline">#</a></h2>
-<div class="section" id="cluster-group-membership-pivot-table">
-<h3>Cluster group membership pivot table<a class="headerlink" href="#cluster-group-membership-pivot-table" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="example-use-cases">
+<h2>Example use cases<a class="headerlink" href="#example-use-cases" title="Permalink to this heading">#</a></h2>
+<section id="cluster-group-membership-pivot-table">
+<h3>Cluster group membership pivot table<a class="headerlink" href="#cluster-group-membership-pivot-table" title="Permalink to this heading">#</a></h3>
 <p>To support analysis and visualization by cluster group in later tutorials, we create a pivot table using pandas groupby fuunction. Each row of the resulting dataframe represents a cluster, each column represents cluster group and the value in the table is a boolean specifying if the cluster is a member of the cluster group.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1026,9 +1028,9 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="visualize-a-cluster-group-in-whole-brain-and-neighborhood-embeddings">
-<h3>Visualize a cluster group in whole brain and neighborhood embeddings<a class="headerlink" href="#visualize-a-cluster-group-in-whole-brain-and-neighborhood-embeddings" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="visualize-a-cluster-group-in-whole-brain-and-neighborhood-embeddings">
+<h3>Visualize a cluster group in whole brain and neighborhood embeddings<a class="headerlink" href="#visualize-a-cluster-group-in-whole-brain-and-neighborhood-embeddings" title="Permalink to this heading">#</a></h3>
 <p>In this example, we visualize cluster group “CCN20230722_HY-EA-Glut-GABA” in context the whole brain UMAP and specific “HY-EA-Glut-GABA” UMAP.</p>
 <p>First step is to read in 10x cell metadata with annotation dataframe.</p>
 <div class="cell docutils container">
@@ -1198,9 +1200,9 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 <img alt="../_images/7219b51b2f44b0974443f15b8334364c5d06c8d2092f3a1fdbb18666218a4a5b.png" src="../_images/7219b51b2f44b0974443f15b8334364c5d06c8d2092f3a1fdbb18666218a4a5b.png" />
 </div>
 </div>
-</div>
-<div class="section" id="visualize-gene-expression-in-neighborhood-embedings">
-<h3>Visualize gene expression in neighborhood embedings<a class="headerlink" href="#visualize-gene-expression-in-neighborhood-embedings" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="visualize-gene-expression-in-neighborhood-embedings">
+<h3>Visualize gene expression in neighborhood embedings<a class="headerlink" href="#visualize-gene-expression-in-neighborhood-embedings" title="Permalink to this heading">#</a></h3>
 <p>In this section, we show how to visualize gene expression in a neighborhood specific embedding. We start by reading in the gene expression dataframe we previously cached in the metadata directory from running 10x part 2a tutorial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1253,9 +1255,9 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 <img alt="../_images/c8f12df151c0d3cd47a8bfb915449ee4837fa3ba70d3db2d68412a5b42535343.png" src="../_images/c8f12df151c0d3cd47a8bfb915449ee4837fa3ba70d3db2d68412a5b42535343.png" />
 </div>
 </div>
-</div>
-<div class="section" id="visualize-cluster-groups-in-anatomical-context">
-<h3>Visualize cluster groups in anatomical context<a class="headerlink" href="#visualize-cluster-groups-in-anatomical-context" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="visualize-cluster-groups-in-anatomical-context">
+<h3>Visualize cluster groups in anatomical context<a class="headerlink" href="#visualize-cluster-groups-in-anatomical-context" title="Permalink to this heading">#</a></h3>
 <p>In this section, we visualize a cluster group in anatomical context using the whole brain merfish dataset. We begin by reading in the extended cell metadata dataframe.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1340,9 +1342,9 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 <img alt="../_images/5f1b59e899bc446d6dbcfa723659e623a6a010ff1e40e76b2426fce2bb664c0d.png" src="../_images/5f1b59e899bc446d6dbcfa723659e623a6a010ff1e40e76b2426fce2bb664c0d.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>10x RNA-seq gene expression data (part 2b) &#8212; Allen Brain Cell Atlas - Data Access</title>
   
   
@@ -43,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -65,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="MERFISH whole brain spatial transcriptomics" href="../descriptions/notebook_subtitle3.html" />
     <link rel="prev" title="10x RNA-seq gene expression data (part 2a)" href="10x_snRNASeq_tutorial_part_2a.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -421,8 +423,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="x-rna-seq-gene-expression-data-part-2b">
-<h1>10x RNA-seq gene expression data (part 2b)<a class="headerlink" href="#x-rna-seq-gene-expression-data-part-2b" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="x-rna-seq-gene-expression-data-part-2b">
+<h1>10x RNA-seq gene expression data (part 2b)<a class="headerlink" href="#x-rna-seq-gene-expression-data-part-2b" title="Permalink to this heading">#</a></h1>
 <p>We can continue to explore our examples looking at the expression of canonical neurotransmitter transporter genes and gene Tac2 over the whole brain.</p>
 <p>You need to be connected to the internet to run this notebook and that you have downloaded the example data via the getting started notebook.</p>
 <div class="cell docutils container">
@@ -550,8 +552,8 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="expression-of-canonical-neurotransmitter-transporter-genes-in-the-whole-brain">
-<h2>Expression of canonical neurotransmitter transporter genes in the whole brain<a class="headerlink" href="#expression-of-canonical-neurotransmitter-transporter-genes-in-the-whole-brain" title="Permalink to this headline">#</a></h2>
+<section id="expression-of-canonical-neurotransmitter-transporter-genes-in-the-whole-brain">
+<h2>Expression of canonical neurotransmitter transporter genes in the whole brain<a class="headerlink" href="#expression-of-canonical-neurotransmitter-transporter-genes-in-the-whole-brain" title="Permalink to this heading">#</a></h2>
 <p>During analysis, clusters were assigned neurotransmitter identities based on the expression of of canonical neurotransmitter transporter genes. In this example, we create a dataframe comprising of expression of the 9 solute carrier family genes for all the cells in the dataset.  We then group the cells by the assigned neurotransmitter class and compute the mean expression for each group. We define a simple helper function to visualized the expression as a heatmap.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -679,9 +681,9 @@ document.write(`
 <img alt="../_images/6de11fe2d8bcc043c8ef5a171956232f99a1473b7ace9da080ca8e7d7b856732.png" src="../_images/6de11fe2d8bcc043c8ef5a171956232f99a1473b7ace9da080ca8e7d7b856732.png" />
 </div>
 </div>
-</div>
-<div class="section" id="expression-of-tachykinin-2-tac2-in-the-whole-brain">
-<h2>Expression of Tachykinin 2 (Tac2) in the whole brain<a class="headerlink" href="#expression-of-tachykinin-2-tac2-in-the-whole-brain" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="expression-of-tachykinin-2-tac2-in-the-whole-brain">
+<h2>Expression of Tachykinin 2 (Tac2) in the whole brain<a class="headerlink" href="#expression-of-tachykinin-2-tac2-in-the-whole-brain" title="Permalink to this heading">#</a></h2>
 <p>In mice, the tachykinin 2 (Tac2) gene encodes neuropeptide called neurokinin B (NkB). Tac2 is produced by neurons in specific regions of the brain know to be invovled in emotion and social behavior. Based on <a class="reference external" href="https://mouse.brain-map.org/experiment/siv?id=77279001&amp;imageId=77284584&amp;initImage=ish&amp;coordSystem=pixel&amp;x=5384.5&amp;y=3832.5&amp;z=3">ISH data</a> from the Allen Mouse Brain Atlas, Tac 2 is sparsely expressed in the mouse isocortex and densely enriched is specific subcortical regions such the medial habenula (MH), the amygdala and hypothalamus.</p>
 <p>In this example, we create a dataframe comprising expression values of Tac2 for all cells across the whole brain. As with the thalamus only example, grouping expression by neurotransmitter show that Tac2 gene is highly enriched in cholinergic cell types. With the rest of brain included, we can observe that Tac2 is also enriched in Glut-GABA cell types as well.</p>
 <div class="cell docutils container">
@@ -765,8 +767,8 @@ document.write(`
 <img alt="../_images/25f6080f832b7a36324f045e09a4eb5dc877ed525dd5d111707a90f78288dc16.png" src="../_images/25f6080f832b7a36324f045e09a4eb5dc877ed525dd5d111707a90f78288dc16.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
