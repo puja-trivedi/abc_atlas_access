@@ -414,7 +414,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="parcellation-annotations">
 <h1>Parcellation annotations<a class="headerlink" href="#parcellation-annotations" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p><a href="../../_downloads/dce7f6637927674e9aeee4cdd89e09f0/substructure.html"><span>Allen-CCF-2020</span></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/dce7f6637927674e9aeee4cdd89e09f0/substructure.html"><span class="xref download myst">Allen-CCF-2020</span></a></p></li>
 </ul>
 </section>
 
