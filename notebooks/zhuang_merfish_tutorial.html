@@ -174,11 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/data_release_subtitle2.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-C57BL6J-1.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-C57BL6J-1)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-C57BL6J-2.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-C57BL6J-2)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-C57BL6J-3.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-C57BL6J-3)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-C57BL6J-4.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-C57BL6J-4)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/data_release_subtitle2.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -434,7 +430,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-mouse-brain-spatial-transcriptomics-xiaowei-zhuang">
 <h1>MERFISH whole mouse brain spatial transcriptomics (Xiaowei Zhuang)<a class="headerlink" href="#merfish-whole-mouse-brain-spatial-transcriptomics-xiaowei-zhuang" title="Permalink to this heading">#</a></h1>
-<p>A collection of in situ, spatially resolved transcriptomic profiling of individual cells in the whole mouse brain by multiplexed error-robust fluorescence in situ hybridization (MERFISH) consisting of ~9 million cells using a 1122 gene panel. The collection spans four mouse specimens (2 coronal sets and 2 sagittal sets). Cells are mapped to the whole mouse brain taxonomy (WMB-taxonomy) and Allen Common Coordinate Framework (Allen-CCF-2020). Refer to <a class="reference external" href="https://doi.org/10.1101/2023.03.06.531348">Zhang et al, 2023</a> for more details.</p>
+<p>A collection of in situ, spatially resolved transcriptomic profiles of individual cells in the whole mouse brain by multiplexed error-robust fluorescence in situ hybridization (MERFISH) consisting of ~9 million cells using a 1122 gene panel. We performed MERFISH imaging on 245 coronal and sagittal sections from four animal, obtained 9.3 million segmented cells that passed quality control, and integrated the MERFISH data from the four animals with the scRNA-seq data from the Allen Institute to classify cells. We applied a series of filters to select a subset of cells to be visualized on the ABC atlas. We first removed six fractured tissue slices and 9.1 million cells remained after this step. Then we aligned the spatial coordinates of the cells to the Allen-CCF-2020. For coronal slices that can be registered to the CCF, we used the CCF coordinates to define the coordinates of the center point of the midline and removed cells that substantially passed the midline in the other hemisphere (which has not been registered to the CCF). For the sagittal slices that can be registered to the CCF, we used the CCF coordinates to define the coordinates of the center point of the tissue and removed cells that substantially passed the posterior edge (which has not been registered to the CCF). For the 31 anterior and posterior coronal slices and 3 lateral sagittal slices that cannot be registered to the CCF, we manually aligned and oriented the slices. The x, y coordinates are experimentally measured coordinates after rotating and aligning the tissue slices to the CCF, and the z coordinates are estimated position of each tissue slice in the 3D Allen-CCF 2020 space along the slicing axis based on either the registration results (for slices that can be registered to CCF) or positions of the slices measured during tissue sectioning (for the slices that cannot be registered). The z position is set to zero when the estimated position becomes zero or negative. 8.4 million cells remained after this step. The cell-by-gene matrix of the 8.4 millions cells can be downloaded from the AWS bucket of this animal. We then filtered the cells by cell-classification (label transfer) confidence scores calculated during MERFISH-scRNAseq data integration. 7.0 million cells passed the confidence score threshold for cell subclass label transfer and 5.8 million cells further passed the confidence score threshold for cell cluster label transfer. These 5.8 million cells are included in the cell metadata file that can be downloaded from the the AWS bucket and are displayed on the ABC Atlas. The CCF coordinates of the 5.4 million cells that were registered to the 3D Allen-CCF can be downloaded from the CCF coordinate files in the AWB bucket. The collection spans four mouse specimens (2 coronal sets and 2 sagittal sets). Cells are mapped to the whole mouse brain taxonomy (WMB-taxonomy) and Allen Common Coordinate Framework (Allen-CCF-2020). Refer to <a class="reference external" href="https://doi.org/10.1101/2023.03.06.531348">Zhang et al, 2023</a> for more details.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -471,11 +467,11 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Zhuang-C57BL6J-1&#39;</span><span class="p">,</span><span class="s1">&#39;Zhuang-C57BL6J-2&#39;</span><span class="p">,</span><span class="s1">&#39;Zhuang-C57BL6J-3&#39;</span><span class="p">,</span><span class="s1">&#39;Zhuang-C57BL6J-4&#39;</span><span class="p">]</span>
-<span class="n">example_section</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Zhuang-C57BL6J-1&#39;</span><span class="p">:</span><span class="s1">&#39;C57BL6J-1.079&#39;</span><span class="p">,</span>
-                   <span class="s1">&#39;Zhuang-C57BL6J-2&#39;</span><span class="p">:</span><span class="s1">&#39;C57BL6J-2.037&#39;</span><span class="p">,</span>
-                   <span class="s1">&#39;Zhuang-C57BL6J-3&#39;</span><span class="p">:</span><span class="s1">&#39;C57BL6J-3.010&#39;</span><span class="p">,</span>
-                   <span class="s1">&#39;Zhuang-C57BL6J-4&#39;</span><span class="p">:</span><span class="s1">&#39;C57BL6J-4.002&#39;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Zhuang-ABCA-1&#39;</span><span class="p">,</span><span class="s1">&#39;Zhuang-ABCA-2&#39;</span><span class="p">,</span><span class="s1">&#39;Zhuang-ABCA-3&#39;</span><span class="p">,</span><span class="s1">&#39;Zhuang-ABCA-4&#39;</span><span class="p">]</span>
+<span class="n">example_section</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Zhuang-ABCA-1&#39;</span><span class="p">:</span><span class="s1">&#39;Zhuang-ABCA-1.079&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;Zhuang-ABCA-2&#39;</span><span class="p">:</span><span class="s1">&#39;Zhuang-ABCA-2.037&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;Zhuang-ABCA-3&#39;</span><span class="p">:</span><span class="s1">&#39;Zhuang-ABCA-3.010&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;Zhuang-ABCA-4&#39;</span><span class="p">:</span><span class="s1">&#39;Zhuang-ABCA-4.002&#39;</span><span class="p">}</span>
 
 <span class="n">metadata</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">datasets</span> <span class="p">:</span>
@@ -526,10 +522,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-C57BL6J-1 : Number of cells =  2846908 ,  Number of sections = 147
-Zhuang-C57BL6J-2 : Number of cells =  1227408 ,  Number of sections = 66
-Zhuang-C57BL6J-3 : Number of cells =  1585843 ,  Number of sections = 23
-Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1 : Number of cells =  2846908 ,  Number of sections = 147
+Zhuang-ABCA-2 : Number of cells =  1227408 ,  Number of sections = 66
+Zhuang-ABCA-3 : Number of cells =  1585843 ,  Number of sections = 23
+Zhuang-ABCA-4 : Number of cells =  162578 ,  Number of sections = 3
 </pre></div>
 </div>
 </div>
@@ -591,9 +587,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
   <tbody>
     <tr>
       <th>182941331246012878296807398333956011710</th>
-      <td>C57BL6J-1.089</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.089</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>704</td>
@@ -606,9 +602,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>221260934538535633595532020856387724686</th>
-      <td>C57BL6J-1.089</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.089</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>5243</td>
@@ -621,9 +617,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>22228792606814781533240955623030943708</th>
-      <td>C57BL6J-1.089</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.089</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>14939</td>
@@ -636,9 +632,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>272043042552227961220474294517855477150</th>
-      <td>C57BL6J-1.089</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.089</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>14939</td>
@@ -651,9 +647,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>110116287883089187971185374239350249328</th>
-      <td>C57BL6J-1.089</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.089</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>5254</td>
@@ -681,9 +677,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>94310525370042131911495836073267655162</th>
-      <td>C57BL6J-1.110</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.110</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>5255</td>
@@ -696,9 +692,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>298798481479578578007190103666214714353</th>
-      <td>C57BL6J-1.110</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.110</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>14939</td>
@@ -711,9 +707,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>330756942354980576352210203729462562749</th>
-      <td>C57BL6J-1.110</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.110</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>5261</td>
@@ -726,9 +722,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>47305871059582831548494138048361484565</th>
-      <td>C57BL6J-1.110</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.110</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>5252</td>
@@ -741,9 +737,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>64578198410898899234789748167671783948</th>
-      <td>C57BL6J-1.110</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.110</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>5263</td>
@@ -866,9 +862,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
   <tbody>
     <tr>
       <th>182941331246012878296807398333956011710</th>
-      <td>C57BL6J-1.089</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.089</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>704</td>
@@ -890,9 +886,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>221260934538535633595532020856387724686</th>
-      <td>C57BL6J-1.089</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.089</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>5243</td>
@@ -914,9 +910,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>22228792606814781533240955623030943708</th>
-      <td>C57BL6J-1.089</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.089</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>14939</td>
@@ -938,9 +934,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>272043042552227961220474294517855477150</th>
-      <td>C57BL6J-1.089</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.089</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>14939</td>
@@ -962,9 +958,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>110116287883089187971185374239350249328</th>
-      <td>C57BL6J-1.089</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.089</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>5254</td>
@@ -1010,9 +1006,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>94310525370042131911495836073267655162</th>
-      <td>C57BL6J-1.110</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.110</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>5255</td>
@@ -1034,9 +1030,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>298798481479578578007190103666214714353</th>
-      <td>C57BL6J-1.110</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.110</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>14939</td>
@@ -1058,9 +1054,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>330756942354980576352210203729462562749</th>
-      <td>C57BL6J-1.110</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.110</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>5261</td>
@@ -1082,9 +1078,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>47305871059582831548494138048361484565</th>
-      <td>C57BL6J-1.110</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.110</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>5252</td>
@@ -1106,9 +1102,9 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
     </tr>
     <tr>
       <th>64578198410898899234789748167671783948</th>
-      <td>C57BL6J-1.110</td>
-      <td>C57BL6J-1</td>
-      <td>C57BL6J-1</td>
+      <td>Zhuang-ABCA-1.110</td>
+      <td>Zhuang-ABCA-1</td>
+      <td>Zhuang-ABCA-1</td>
       <td>wt/wt</td>
       <td>F</td>
       <td>5263</td>
@@ -1293,7 +1289,7 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fe2c3f1d66d99dfd3b5ff0a72e909f0552360fa25d38240d627fe681d6d1151a.png" src="../_images/fe2c3f1d66d99dfd3b5ff0a72e909f0552360fa25d38240d627fe681d6d1151a.png" />
+<img alt="../_images/1312f2b639115762cc5d351828a4544c56a10d0046a255ecb2b517a69fdd06c6.png" src="../_images/1312f2b639115762cc5d351828a4544c56a10d0046a255ecb2b517a69fdd06c6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1304,7 +1300,7 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/626ebb1740eb078e000b3035bfe1a678968f76bd71e011a61bc0880ee960e91b.png" src="../_images/626ebb1740eb078e000b3035bfe1a678968f76bd71e011a61bc0880ee960e91b.png" />
+<img alt="../_images/7f92f3d3a30a4ea3aaedb2505e41626d2baa680b794c5139a822db7bc29e313a.png" src="../_images/7f92f3d3a30a4ea3aaedb2505e41626d2baa680b794c5139a822db7bc29e313a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1315,7 +1311,7 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4f07fb5b7ba90dead3587fe3214bbdbbc25f10667934111cb11161f8fd0353e2.png" src="../_images/4f07fb5b7ba90dead3587fe3214bbdbbc25f10667934111cb11161f8fd0353e2.png" />
+<img alt="../_images/b2807401cd6beb05a21eee4c16dee6cd1b6a76a83ba93ad0b3ab7d71a59741dd.png" src="../_images/b2807401cd6beb05a21eee4c16dee6cd1b6a76a83ba93ad0b3ab7d71a59741dd.png" />
 </div>
 </div>
 </section>
@@ -1434,10 +1430,10 @@ Zhuang-C57BL6J-4 : Number of cells =  162578 ,  Number of sections = 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-C57BL6J-1 - time taken:  25.846898455
-Zhuang-C57BL6J-2 - time taken:  11.023237860000009
-Zhuang-C57BL6J-3 - time taken:  12.051395306000003
-Zhuang-C57BL6J-4 - time taken:  1.374322652999993
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1 - time taken:  26.131841844
+Zhuang-ABCA-2 - time taken:  10.865160033999999
+Zhuang-ABCA-3 - time taken:  12.162818516000002
+Zhuang-ABCA-4 - time taken:  1.3441603709999868
 </pre></div>
 </div>
 </div>
@@ -1451,7 +1447,7 @@ Zhuang-C57BL6J-4 - time taken:  1.374322652999993
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3925eb9acf0524d9d1ac2ced17d98a5fc6371b5d99f0afb2dc61fb55c1850139.png" src="../_images/3925eb9acf0524d9d1ac2ced17d98a5fc6371b5d99f0afb2dc61fb55c1850139.png" />
+<img alt="../_images/611e883dae40bd3f29799cd63241ed44b29e45998129ff2750bb49ac78ab8b52.png" src="../_images/611e883dae40bd3f29799cd63241ed44b29e45998129ff2750bb49ac78ab8b52.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1462,7 +1458,7 @@ Zhuang-C57BL6J-4 - time taken:  1.374322652999993
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3e42668e4100bb925cf8a818d0398e1fed5b93f86e5cb9a7e6c92aad3571d62b.png" src="../_images/3e42668e4100bb925cf8a818d0398e1fed5b93f86e5cb9a7e6c92aad3571d62b.png" />
+<img alt="../_images/4f2c249f6d3ff8cab40a75bf99ae3ec9fdab2cc84d46f3dc3788f8d14f32699b.png" src="../_images/4f2c249f6d3ff8cab40a75bf99ae3ec9fdab2cc84d46f3dc3788f8d14f32699b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1473,7 +1469,7 @@ Zhuang-C57BL6J-4 - time taken:  1.374322652999993
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/283b2aff9fe00ccf72a281bc969dad4ef480f00f20db81c5284debb21a6def6e.png" src="../_images/283b2aff9fe00ccf72a281bc969dad4ef480f00f20db81c5284debb21a6def6e.png" />
+<img alt="../_images/627735b273c9e806b22eb634cd80a1b179120dfd5da028347d73aef4aee42f42.png" src="../_images/627735b273c9e806b22eb634cd80a1b179120dfd5da028347d73aef4aee42f42.png" />
 </div>
 </div>
 <section id="ccf-registration-and-parcellation-annotation">
@@ -1653,7 +1649,7 @@ Zhuang-C57BL6J-4 - time taken:  1.374322652999993
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/137108880f13038d62c3bf0b5afb2b0b7b8e63599520df07b3456d7d3cbc491f.png" src="../_images/137108880f13038d62c3bf0b5afb2b0b7b8e63599520df07b3456d7d3cbc491f.png" />
+<img alt="../_images/41c9bc1332689bd3b10f7b42398a8342538948a71295e4ea5f262c103b859bd7.png" src="../_images/41c9bc1332689bd3b10f7b42398a8342538948a71295e4ea5f262c103b859bd7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1664,7 +1660,7 @@ Zhuang-C57BL6J-4 - time taken:  1.374322652999993
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a258fea7b9cfae67ca7fea15cead7b731f60b4305a8c8ebe0e57c85cdb908900.png" src="../_images/a258fea7b9cfae67ca7fea15cead7b731f60b4305a8c8ebe0e57c85cdb908900.png" />
+<img alt="../_images/4d09a69f3e556ab867529b6f9ccf4f0a2efe6014cf3044ba52bbbf86486a3171.png" src="../_images/4d09a69f3e556ab867529b6f9ccf4f0a2efe6014cf3044ba52bbbf86486a3171.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1675,7 +1671,7 @@ Zhuang-C57BL6J-4 - time taken:  1.374322652999993
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0beac246faffedb2ef9cb2c305cb6d4afaef3d70d85313d94fd8832065fabce7.png" src="../_images/0beac246faffedb2ef9cb2c305cb6d4afaef3d70d85313d94fd8832065fabce7.png" />
+<img alt="../_images/565f879962f99f62404884759d27aefd906921527d5ed4c9f400dc7838544245.png" src="../_images/565f879962f99f62404884759d27aefd906921527d5ed4c9f400dc7838544245.png" />
 </div>
 </div>
 </section>

@@ -174,11 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="data_release_subtitle2.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Zhuang-C57BL6J-1.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-C57BL6J-1)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Zhuang-C57BL6J-2.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-C57BL6J-2)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Zhuang-C57BL6J-3.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-C57BL6J-3)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Zhuang-C57BL6J-4.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-C57BL6J-4)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="data_release_subtitle2.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -414,10 +410,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="whole-adult-mouse-brain-taxonomy-of-cell-types">
 <h1>Whole adult mouse brain taxonomy of cell types<a class="headerlink" href="#whole-adult-mouse-brain-taxonomy-of-cell-types" title="Permalink to this heading">#</a></h1>
-<p><a class="reference internal" href="WMB-10X.html"><span class="doc std std-doc">Clustering analysis</span></a> of 4.0 million single cell transcriptomes spanning the whole adult mouse brain combining the <a class="reference internal" href="WMB-10Xv2.html"><span class="doc std std-doc">10Xv2</span></a> and <a class="reference internal" href="WMB-10Xv3.html"><span class="doc std std-doc">10Xv3</span></a> datasets
-was conducted resulting in a set of 5196 clusters. A detailed analysis of the clusters were preformed as described in <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2023.03.06.531121v1">Yao et. al</a>. Cells from a <a class="reference internal" href="MERFISH-C57BL6J-638850.html"><span class="doc std std-doc">spatial transcriptomics</span></a> dataset spanning the whole mouse brain was mapped to the taxonomy to provide anatomical context.</p>
-<p>To organize the complex molecular relationships, a hierarchical representation of cell types was defined with 5 nested levels of classification: division, class, subclass, supertype and clusters.
-Further neurotransmitter identity was assigned to each cluster based on expression of canonical neurotransmitter transporter genes.</p>
+<p>The Mouse Whole Brain Atlas is a high-resolution transcriptomic and spatial cell-type atlas across the entire mouse brain, integrating several whole-brain single-cell RNA-sequencing (scRNA-seq) datasets. The datasets contain a total of ~4 million cells passing rigorous quality-control (QC) criteria. The integrated transcriptomic taxonomy contains 5,322 clusters that are organized in a hierarchical manner with nested groupings of 34 classes, 338 subclasses, 1,201 supertypes and 5,322 types/clusters. The scRNA-seq data reveal transcriptome-wide gene expression and co-expression patterns for each cell type. The anatomical location of each cell type has been annotated using a comprehensive brain-wide MERFISH dataset with a total of ~4 million segmented and QC-passed cells, probed with a 500-gene panel and registered to the Allen Mouse Brain Common Coordinate Framework (CCF v3). The MERFISH data not only provide accurate spatial annotation of cell types at subclass, supertype and cluster levels, but also reveal fine-resolution spatial distinctions or gradients for cell types. The combination of scRNA-seq and MERFISH data reveals a high degree of correspondence between transcriptomic identity and spatial specificity for each cell type, as well as unique features of cell type organization in different brain regions.</p>
+<p>A detailed cell type <a class="reference external" href="https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com/metadata/WMB-taxonomy/20230830/cl.df_CCN202307220.xlsx">annotation table</a> is also provided along with data downloads detailing information about the hierarchical membership, anatomical annotation, neurotransmitter type, cell type marker genes, transcription factor and neuropeptide markers, and other metadata types for each cluster.</p>
 <p>The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:</p>
 <table class="table">
 <thead>
@@ -436,8 +430,6 @@ Further neurotransmitter identity was assigned to each cluster based on expressi
 <p>Data is being share under the CC BY NC 4.0 license.</p>
 <p>Related resources :</p>
 <ul class="simple">
-<li><p>Whole mouse brain 10Xv2 single cell transcriptomes (<a class="reference internal" href="WMB-10Xv2.html"><span class="doc std std-doc">WMB-10Xv2</span></a>)</p></li>
-<li><p>Whole mouse brain 10Xv3 single cell transcriptomes (<a class="reference internal" href="WMB-10Xv3.html"><span class="doc std std-doc">WMB-10Xv3</span></a>)</p></li>
 <li><p>Whole mouse brain mouse brain clustering (<a class="reference internal" href="WMB-10X.html"><span class="doc std std-doc">WMB-10X</span></a>)</p></li>
 <li><p>Whole mouse brain MERFISH spatial transcriptomics dataset (<a class="reference internal" href="MERFISH-C57BL6J-638850.html"><span class="doc std std-doc">MERFISH-C57BL6J-638850</span></a>)</p></li>
 </ul>
