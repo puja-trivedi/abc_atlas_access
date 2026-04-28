@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Allen Brain Cell Atlas - Data Access &#8212; Allen Brain Cell Atlas - Data Access</title>
   
@@ -15,58 +14,60 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/simple_style.css?v=3aaed5dc" />
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Getting started" href="notebooks/getting_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -74,23 +75,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -98,7 +92,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -106,16 +99,27 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -128,9 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="#">
+  
   
   
   
@@ -140,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/allen_logo.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/allen_logo.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/allen_logo.jpeg" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
+    <img src="_static/allen_logo.jpeg" class="logo__image only-dark pst-js-only" alt="Allen Brain Cell Atlas - Data Access - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -158,64 +173,142 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/data_release_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/WMB_dataset.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/WMB-10Xv2.html">Whole mouse brain 10Xv2 single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/WMB-10Xv3.html">Whole mouse brain 10Xv3 single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/WMB-10XMulti.html">Whole mouse brain 10XMulti single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/data_release_subtitle2.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/Zeng_Aging_Mouse_dataset.html">Aging Mouse dataset (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/Zeng_Aging_Mouse_10Xv3.html">Zeng Aging Mouse 10Xv3 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/Zeng_Aging_Mouse_taxonomy.html">Zeng Aging Mouse clustering and mapping to the WMB taxonomy of cell types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/Zhuang_dataset.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/Zhuang-ABCA-1.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-1)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/Zhuang-ABCA-2.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-2)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/Zhuang-ABCA-3.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-3)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/Zhuang-ABCA-4.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-4)</a></li>
 </ul>
-</li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/Consensus-WMB-dataset.html">Consensus Whole Mouse Brain dataset (Macosko, Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/Consensus-WMB-10X.html">Consensus Whole Mouse Brain single cell/nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/Consensus-WMB-taxonomy.html">Consensus Whole Mouse Brain integrated taxonomy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/Dev-Mouse-Vis-Cortex-dataset.html">Developing Mouse - Visual Cortex</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/Dev-Mouse-Vis-Cortex-10X.html">Developing Mouse - Visual Cortex single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/Dev-Mouse-Vis-Cortex-taxonomy.html">Developing Mouse - Visual Cortex taxonomy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/WHB_dataset.html">Human whole-brain transcriptomic cell type atlas (Kimberly Siletti)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/WHB-10Xv3.html">Human brain 10Xv3 single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/WHB-10X-clustering.html">Clustering analysis of whole human brain 10X single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/WHB-taxonomy.html">Human brain taxonomy of cell types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/ASAP-PMDBS_dataset.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (ASAP-PMDBS)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/ASAP-PMDBS-10X.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Data Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/ASAP-PMDBS-MapMyCells.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Mapping to the Whole Human Brain (WHB) and Seattle Alzheimer’s Disease Brain Cell Atlas (SEA-AD) Taxonomies</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Aligned gene expression across species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">NOTEBOOKS</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/notebook_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/notebook_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/cluster_annotation_tutorial.html">10x RNA-seq clustering analysis and annotation (CCN20230722)</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="descriptions/notebook_subtitle2.html">10x scRNA-seq gene expression data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="descriptions/notebook_subtitle2.html">10x scRNA-seq gene expression data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_1.html">10x RNA-seq gene expression data (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2a.html">10x RNA-seq gene expression data (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2b.html">10x RNA-seq gene expression data (part 2b)</a></li>
 </ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="descriptions/notebook_subtitle3.html">MERFISH whole brain spatial transcriptomics</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="descriptions/notebook_subtitle3.html">MERFISH whole brain spatial transcriptomics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/cluster_neighborhood_gallery.html">Cell type neighborhood gallery</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/ccf_and_parcellation_annotation_tutorial.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/merfish_ccf_registration_tutorial.html">MERFISH CCF mapped coordinates</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/notebook_subtitle4.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/Consensus-WMB-notebooks.html">Consensus Mouse notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/consensus_mouse_clustering_analysis_and_annotation.html">Consensus Whole Mouse Brain #1: Clustering and Annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/consensus_mouse_10X_snRNASeq.html">Consensus Whole Mouse Brain #2: 10X gene expression</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/Dev-Mouse-Vis-Cortex-notebooks.html">Developing Mouse - Visual Cortex notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/dev_mouse_vis_cortex_clustering_analysis_and_annotation.html">Developing Mouse - Visual Cortex 10X scRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/dev_mouse_vis_cortex_10X_scRNASeq.html">Developing Mouse - Visual Cortex: 10X gene expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/Zeng_Aging_Mouse_notebooks.html">Aging Mouse Notebooks (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Zeng_Aging_Mouse_clustering_analysis_and_annotation.html">Mouse Aging clustering analysis and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Zeng_Aging_Mouse_10x_snRNASeq_tutorial.html">Mouse Aging 10X RNA-seq gene expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/notebook_subtitle4.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/zhuang_merfish_tutorial.html">MERFISH whole mouse brain spatial transcriptomics (Xiaowei Zhuang)</a></li>
 </ul>
-</li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/WHB_notebooks.html">Whole Human Brain 10x scRNA-seq gene expression data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/WHB_cluster_annotation_tutorial.html">Whole Human Brain 10x RNA-seq clustering analysis and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/WHB-10x_snRNASeq_tutorial_part_1.html">Whole Human Brain (WHB) 10x RNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/WHB-10x_snRNASeq_tutorial_part_2.html">Whole Human Brain 10x RNA-seq gene expression data (part 2)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/ASAP-PMDBS_notebooks.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (ASAP-PMDBS) Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/asap_pmdbs_data_and_metadata.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Data Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/asap_pmdbs_siletti_taxonomy.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Mapping to the Whole Human Brain Taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/asap_pmdbs_seaad_taxonomy.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Mapping to the SEA-AD Taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/asap_pmdbs_gene_expression.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Gene Expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/HMBA-BG_notebooks.html">Human-Mammalian Brain - Basal Ganglia: Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/hmba_bg_10X_snRNASeq_tutorial.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/hmba_bg_macaque_patchseq.html">Human-Mammalian Brain - Basal Ganglia Patchseq</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ADDITIONAL RESOURCES</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="docs/README.html">Resource Pages</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="docs/gene_lists/README.html">Gene lists</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="docs/README.html">Resource Pages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/abbreviation_terms/README.html">Abbreviation lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/cluster_annotations/README.html">Cluster annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/supplemental_metadata_descriptions/README.html">Supplemental Metadata Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -224,14 +317,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -240,14 +338,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -356,7 +454,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -369,24 +467,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -402,6 +496,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-notebooks">Available notebooks:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-notes">Release Notes</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -409,71 +512,302 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="allen-brain-cell-atlas-data-access">
-<h1>Allen Brain Cell Atlas - Data Access<a class="headerlink" href="#allen-brain-cell-atlas-data-access" title="Permalink to this heading">#</a></h1>
-<p>The Allen Brain Cell Atlas (ABC Atlas) aims to empower researchers worldwide to explore and analyze multiple whole-brain datasets simultaneously. As the Allen Institute and its collaborators continue to add new modalities, species, and insights to the ABC Atlas, this groundbreaking platform will keep growing, opening up endless possibilities for groundbreaking discoveries and breakthroughs in neuroscience. With the ABC Atlas, researchers everywhere can gain new insights into the brain’s complex workings, advancing our understanding of this amazing organ in ways we never thought possible.</p>
-<p>Data associated with the ABC Atlas is hosted on Amazon Web Services (AWS) in an S3 bucket as a AWS Public Dataset, <a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html">arn:aws:s3:::allen-brain-cell-atlas</a>. No account or login is required for access. The purpose of this repo is to provide an overview of the available data, how to download and use it through example use cases.</p>
-<p>The fall 2023 public beta data release includes:</p>
+<h1>Allen Brain Cell Atlas - Data Access<a class="headerlink" href="#allen-brain-cell-atlas-data-access" title="Link to this heading">#</a></h1>
+<p>The Allen Brain Cell Atlas (ABC Atlas) aims to empower researchers worldwide to
+explore and analyze multiple whole-brain datasets simultaneously. As the Allen
+Institute and its collaborators continue to add new modalities, species, and
+insights to the ABC Atlas, this groundbreaking platform will keep growing,
+opening up endless possibilities for groundbreaking discoveries and
+breakthroughs in neuroscience. With the ABC Atlas, researchers everywhere can
+gain new insights into the brain’s complex workings, advancing our
+understanding of this amazing organ in ways we never thought possible. The
+ABC Atlas can be accessed at <a class="reference external" href="https://portal.brain-map.org/atlases-and-data/bkp/abc-atlas">here</a>
+and is the primary method of interacting with these data. Any questions or
+issues associated with the ABC Atlas are best directed to the <a class="reference external" href="https://community.brain-map.org/">Allen Institute
+Community Forum</a>. This repository is intended
+for users who wish to download the ABC Atlas data and processes it locally.</p>
+<p>Data associated with the ABC Atlas is hosted on Amazon Web Services (AWS) in an
+S3 bucket as a AWS Public Dataset, <a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html">arn:aws:s3:::allen-brain-cell-atlas</a>.
+No account or login is required for access. <em><strong>The purpose of this repo is to
+provide an overview of the available data, how to download and use it through
+example use cases.</strong></em></p>
+<p>The Early-Winter 2026 public beta data release includes:</p>
 <ul class="simple">
-<li><p><strong>Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</strong></p>
-<ul>
-<li><p>1.7 million single cell transcriptomes spanning the whole adult mouse brain using 10Xv2 chemistry (<a class="reference internal" href="descriptions/WMB-10Xv2.html"><span class="doc std std-doc">WMB-10Xv2</span></a>)</p></li>
-<li><p>2.3 million single cell transcriptomes spanning the whole adult mouse brain using 10Xv3 chemistry (<a class="reference internal" href="descriptions/WMB-10Xv3.html"><span class="doc std std-doc">WMB-10Xv3</span></a>)</p></li>
-<li><p>1687 million single cell transcriptomes spanning the whole adult mouse brain using the 10X Multiome chemistry (<a class="reference internal" href="descriptions/WMB-10XMulti.html"><span class="doc std std-doc">WMB-10XMulti</span></a>)</p></li>
-<li><p>Clustering analysis of 4.0 million single cell transcriptomes spanning the whole adult mouse brain combining the 10Xv2, 10Xv3 and 10XMulti datasets (<a class="reference internal" href="descriptions/WMB-10X.html"><span class="doc std std-doc">WMB-10X</span></a>)</p></li>
-<li><p>A four level whole adult mouse brain taxonomy of cell types (<a class="reference internal" href="descriptions/WMB-taxonomy.html"><span class="doc std std-doc">WMB-taxonomy</span></a>)</p></li>
-<li><p>3.9 million cell spatial transcriptomics dataset spanning a single adult mouse brain with a 500 gene panel and mapped to the whole mouse brain taxonomy (<a class="reference internal" href="descriptions/MERFISH-C57BL6J-638850.html"><span class="doc std std-doc">MERFISH-C57BL6J-638850</span></a>)</p></li>
-<li><p>Definition of 8 cell types neighborhoods and UMAP embeddings for fine grain visualization and analysis of neuronal types within and between brain regions (<a class="reference internal" href="descriptions/WMB-neighborhoods.html"><span class="doc std std-doc">WMB-neighborhoods</span></a>)</p></li>
-<li><p>An updated Allen CCFv3 with additional annotations for layers of Ammon’s horns, main olfactory blub and a simplifed 5-level anatomical heirarchy (<a class="reference internal" href="descriptions/Allen-CCF-2020.html"><span class="doc std std-doc">Allen-CCF-2020</span></a>)</p></li>
-<li><p>CCF mapped coordinates for cells in the whole brain spatial transcriptomics dataset (<a class="reference internal" href="descriptions/MERFISH-C57BL6J-638850-CCF.html"><span class="doc std std-doc">MERFISH-C57BL6J-638850-CCF</span></a>)</p></li>
+<li><p><strong><a class="reference internal" href="descriptions/WMB_dataset.html"><span class="std std-doc">Mouse whole-brain transcriptomic cell type atlas</span></a>
+(Hongkui Zeng)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/Consensus-WMB-dataset.html"><span class="std std-doc">Consensus Whole Mouse Brain cell type atlas</span></a> (Evan Macosko, Hongkui Zeng)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/Zeng_Aging_Mouse_dataset.html"><span class="std std-doc">Aging Mouse transcriptomic cell type atlas</span></a>
+(Hongkui Zeng)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/Dev-Mouse-Vis-Cortex-dataset.html"><span class="std std-doc">Developing Mouse - Visual Cortex</span></a>
+(Hongkui Zeng)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/Zhuang_dataset.html"><span class="std std-doc">A molecularly defined and spatially resolved cell atlas of the whole mouse brain</span></a>
+(Xiaowei Zhuang)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/WHB_dataset.html"><span class="std std-doc">Human whole-brain transcriptomic cell type atlas</span></a>
+(Kimberly Siletti)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/ASAP-PMDBS_dataset.html"><span class="std std-doc">Human Postmortem-Derived Brain Sequencing Collection</span></a>
+(ASAP)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/HMBA-BG_dataset.html"><span class="std std-doc">Human-Mammalian Brain - Basal Ganglia</span></a>
+(HMBA)</strong></p></li>
 </ul>
-</li>
-<li><p><strong>A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</strong></p>
-<ul>
-<li><p>4.2 million cell spatial transcriptomics dataset spanning 147 coronal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 (<a class="reference internal" href="descriptions/Zhuang-ABCA-1.html"><span class="doc std std-doc">Zhuang-ABCA-1</span></a>; 2.8 million cells passed cell classification confidence score threshold and displayed in the ABC atlas)</p></li>
-<li><p>1.9 million cell spatial transcriptomics dataset spanning 66 coronal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 (<a class="reference internal" href="descriptions/Zhuang-ABCA-2.html"><span class="doc std std-doc">Zhuang-ABCA-2</span></a>; 1.2 million cells passed cell classification confidence score threshold and displayed in the ABC atlas)</p></li>
-<li><p>2.1 million cell spatial transcriptomics dataset spanning 23 sagittal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 (<a class="reference internal" href="descriptions/Zhuang-ABCA-3.html"><span class="doc std std-doc">Zhuang-ABCA-3</span></a>; 1.6 million cells passed cell classification confidence score threshold and displayed in the ABC atlas)</p></li>
-<li><p>0.22 million cell spatial transcriptomics dataset spanning 3 sagittal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 (<a class="reference internal" href="descriptions/Zhuang-ABCA-4.html"><span class="doc std std-doc">Zhuang-ABCA-4</span></a>; 0.16 million cells passed cell classification confidence score threshold and displayed in the ABC atlas)</p></li>
-</ul>
-</li>
-</ul>
-<p>Each release has an associated <strong>manifest.json</strong> which list all the specific version of directories and files that are part of the release. We recommend using the manifest as the starting point of data download and usage.</p>
-<p>Expression matrices are stored in the <a class="reference external" href="https://anndata.readthedocs.io/en/latest/">anndata h5ad format</a> and needs to be downloaded to a local file system for usage. To make data transfer, download and access more efficient,
-the 10x transcriptomics datasets have been subdivided into smaller packages grouped by method and anatomical origin. The notebooks provide example code on how to access data across these individual files.</p>
-<p>Available notebooks:</p>
+<p>We provide a lightweight python object, the AbcProjectCache, to handle
+downloading of the data and managing different release versions for the user.
+See the <a class="reference internal" href="notebooks/getting_started.html"><span class="std std-doc">Getting Started</span></a> notebook for more
+details and examples on how to use the AbcProjectCache.</p>
+<p>Expression matrices are stored in the
+<a class="reference external" href="https://anndata.readthedocs.io/en/latest/">anndata h5ad format</a> and need to
+be downloaded to a local file system for usage. To make data transfer, download
+and access more efficient, the 10x transcriptomics datasets have been
+subdivided into smaller packages grouped by method and anatomical origin. The
+notebooks provide example code on how to access data across these individual
+files using the AbcProjectCache.</p>
+<p>If you have used the ABC Atlas visualization to select cells from a dataset and
+with to use your selected cells in an analysis with the data available for
+download here, you find a tutorial to do so in the
+<a class="reference internal" href="notebooks/abc_atlas_selection_example.html"><span class="std std-doc">Using cells selected in the ABC Atlas</span></a>
+notebook.</p>
+<section id="available-notebooks">
+<h2>Available notebooks:<a class="headerlink" href="#available-notebooks" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="notebooks/getting_started.html"><span class="doc std std-doc"><strong>Getting started</strong></span></a>: learn how to use the manifest.json file to faciliate data download and usage.</p></li>
-<li><p><strong>Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</strong></p>
+<li><p><a class="reference internal" href="notebooks/getting_started.html"><span class="std std-doc"><strong>Getting started</strong></span></a>: learn how to use the
+AbcProjectCache to facilitate data download and usage.</p></li>
+<li><p><a class="reference internal" href="notebooks/abc_atlas_selection_example.html"><span class="std std-doc"><strong>Using cells selected in the ABC Atlas</strong></span></a>: learn how
+to use cells selected from an ABC Atlas visualization in your analysis.</p></li>
+<li><p><a class="reference internal" href="notebooks/general_accessing_10x_snRNASeq_tutorial.html"><span class="std std-doc"><strong>Loading genes from expression matrix data</strong></span></a>:
+learn how to select genes from 10X expression matrices and combine them with
+the cell metadata.</p></li>
+<li><p><strong><a class="reference internal" href="descriptions/notebook_subtitle1.html"><span class="std std-doc">Mouse whole-brain transcriptomic cell type atlas</span></a>
+(Hongkui Zeng)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/Consensus-WMB-notebooks.html"><span class="std std-doc">Consensus Whole Mouse Brain Notebooks</span></a> (Evan Macosko, Hongkui Zeng)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/Zeng_Aging_Mouse_notebooks.html"><span class="std std-doc">Aging Mouse transcriptomic cell type atlas</span></a>
+(Hongkui Zeng)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/Dev-Mouse-Vis-Cortex-notebooks.html"><span class="std std-doc">Developing Mouse - Visual Cortex</span></a>
+(Hongkui Zeng)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/notebook_subtitle4.html"><span class="std std-doc">A molecularly defined and spatially resolved cell atlas of the whole
+mouse brain</span></a>
+(Xiaowei Zhuang)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/WHB_notebooks.html"><span class="std std-doc">Human whole-brain transcriptomic cell type atlas</span></a>
+(Kimberly Siletti)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/ASAP-PMDBS_notebooks.html"><span class="std std-doc">Human Postmortem-Derived Brain Sequencing Collection</span></a>
+(ASAP)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/HMBA-BG_notebooks.html"><span class="std std-doc">Human-Mammalian Brain - Basal Ganglia</span></a>
+(HMBA)</strong></p></li>
+</ul>
+</section>
+<section id="release-notes">
+<h2>Release Notes<a class="headerlink" href="#release-notes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>[Bug fix release (version 20260415), abc_atlas_access (v1.3.2)]</strong></p>
 <ul>
-<li><p><a class="reference internal" href="notebooks/cluster_annotation_tutorial.html"><span class="doc std std-doc"><strong>10x scRNA-seq clustering analysis and annotation</strong></span></a>: learn about the whole mouse brain taxonomy through some example use cases and visualization.</p></li>
-<li><p><strong>10x scRNA-seq gene expression data</strong></p>
+<li><p>HMBA-10XMultiome-BG-Aligned</p>
 <ul>
-<li><p><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_1.html"><span class="doc std std-doc"><strong>Part 1</strong></span></a>: learn about the 10x dataset through some example use cases and visualization of cells in the thalamus.</p></li>
-<li><p><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2a.html"><span class="doc std std-doc"><strong>Part 2a</strong></span></a>: learn how to iterate through all the data packages, to access data for whole brain example use cases in part 2b.</p></li>
-<li><p><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2b.html"><span class="doc std std-doc"><strong>Part 2b</strong></span></a>: explore the whole brain data through visualization and analyses of a set of genes of interest.</p></li>
+<li><p>Added more valid abc_sample_ids.</p></li>
 </ul>
 </li>
-<li><p><strong>MERFISH whole brain spatial transcriptomics</strong></p>
+<li><p>Consensus-Mouse-WMB-10X</p>
 <ul>
-<li><p><a class="reference internal" href="notebooks/merfish_tutorial_part_1.html"><span class="doc std std-doc"><strong>Part 1</strong></span></a>: learn about the MERFISH dataset through some example use cases and visualization for a single brain section.</p></li>
-<li><p><a class="reference internal" href="notebooks/merfish_tutorial_part_2a.html"><span class="doc std std-doc"><strong>Part 2a</strong></span></a>: learn to access data and prepare for whole brain example use cases in part 2b.</p></li>
-<li><p><a class="reference internal" href="notebooks/merfish_tutorial_part_2b.html"><span class="doc std std-doc"><strong>Part 2b</strong></span></a>: explore the whole brain data through visualization and analyses of a set of genes of interest.</p></li>
+<li><p>Added alignment_job_id id column to cell metadata.</p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="notebooks/cluster_groups_and_embeddings_tutorial.html"><span class="doc std std-doc"><strong>Cluster groups and embeddings</strong></span></a>: learn about cell types neighborhoods and neighborhood specific UMAP embeddings through example use cases.</p></li>
-<li><p><a class="reference internal" href="notebooks/cluster_neighborhood_gallery.html"><span class="doc std std-doc"><strong>Cell type neighborhood gallery</strong></span></a>: explore and visualize a set of cell types neighborhoods.</p></li>
-<li><p><a class="reference internal" href="notebooks/ccf_and_parcellation_annotation_tutorial.html"><span class="doc std std-doc"><strong>Allen CCFv3 parcellation and annotation</strong></span></a>: learn about the Allen CCFv3 and a simplified 5-level anatomical heirarchy through some example use cases and visualization.</p></li>
-<li><p><a class="reference internal" href="notebooks/merfish_ccf_registration_tutorial.html"><span class="doc std std-doc"><strong>MERFISH CCF mapped coordinates</strong></span></a>: learn about how to download and use CCF mapped coordinates through some example use cases and visualization.</p></li>
 </ul>
 </li>
-<li><p><strong>A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</strong></p>
+<li><p><strong>[Bug fix release (version 20260331), abc_atlas_access (v1.3.1)]</strong></p>
 <ul>
-<li><p><a class="reference internal" href="notebooks/zhuang_merfish_tutorial.html"><span class="doc std std-doc"><strong>MERFISH whole mouse brain spatial transcriptomics</strong></span></a>: learn about the MERFISH dataset through some example use cases and visualization</p></li>
+<li><p>HMBA-10XMultiome-BG-Aligned</p>
+<ul>
+<li><p>Fixed issue with h5ad files having the incorrect normalization. raw is now correctly counts and log2 is log2(CPM+1)</p></li>
+</ul>
+</li>
+<li><p>Dev-Mouse-Vis-Cortex-taxonomy</p>
+<ul>
+<li><p>Fixed issue with sub cluster label ids in cluster.csv and cell_to_cluster_membership.csv</p></li>
 </ul>
 </li>
 </ul>
+</li>
+<li><p><strong>[Add HMBA-Macaque-Patchseq data (version 20260228), abc_atlas_access (v1.3.0)]</strong></p>
+<ul>
+<li><p>Add HMBA-Macaque-PatchSeq data</p>
+<ul>
+<li><p>717 Macaque Patch-Seq cells mapped to the HMBA-BG taxonomy.</p></li>
+<li><p>Electrophysiological and Morphological summary features for select cells.</p></li>
+</ul>
+</li>
+<li><p>Provide CCF coordinates for roughly ~4 million human, basal ganglia cells.</p></li>
+</ul>
+</li>
+<li><p><strong>[Add Developing Mouse - Visual Cortex data (version 20260131), abc_atlas_access (v1.2.0)]</strong></p>
+<ul>
+<li><p>Add Developing Mouse - Visual Cortex dataset.</p>
+<ul>
+<li><p>~500 thousand, single cells in the visual cortex from 53 mice ranging in age from embryo to adult.</p></li>
+<li><p>Taxonomy across cross this range of ages in a 4 level hierarchy
+containing 714 clusters</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>[Add Consensus Whole Mouse Brain datasets (version 20251031), abc_atlas_access (v1.1.0)]</strong></p>
+<ul>
+<li><p>Add Consensus Whole Mouse brain datasets.</p>
+<ul>
+<li><p>New Consensus-WMB-AIBS-10X, ~3.9 million, single cell metadata derived
+from the WMB-10X release hosted through this tool. This release reuses the
+previous WMB-10X(v2/v3), h5ad files.</p></li>
+<li><p>New Consensus-WMB-Macosko-10X data and metadata for ~4 million nuclei.</p>
+<ul>
+<li><p>Metadata for ~3.7 million nuclei</p></li>
+<li><p>Expression matrices for all nuclei with files divided by anatomical
+region.</p></li>
+</ul>
+</li>
+<li><p>New consensus taxonomy derived from the the Allen Institute for Brain
+Science and Broad Institute Macosko lab Whole Mouse Brain data.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>[Add HMBA-BG spatial data. Update HMBA-BG 10X taxonomy, data, and metadata and MapMyCells files (version 20250930), abc_atlas_access (v1.0.0)]</strong></p>
+<ul>
+<li><p>Added basal ganglia, spatial transcriptomic dataset</p>
+<ul>
+<li><p>~5.4 million human basal ganglia and adjacent cells</p></li>
+<li><p>~3.2 million macaque basal ganglia and adjacent cells</p></li>
+<li><p>~1.3 million macaque basal ganglia and adjacent cells</p></li>
+<li><p>Mapping of all cells into the HMBA-BG taxonomy</p></li>
+<li><p>Basal Ganglia, parcellation annotations for each cell and annotation polygons.</p></li>
+</ul>
+</li>
+<li><p>Updated colors for the cross-species, HMBA-BG taxonomy.</p></li>
+<li><p>AbcProjecctCache: Added explicit accessors for expression_matrices, image_volumes, and mapmycells.</p>
+<ul>
+<li><p>get_(metadata)data_path, generalized to get_file_path. Deprecation warning added to get_data_path.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>[Add HMBA-BG 10X taxonomy, data, and metadata and MapMyCells files (version 20250531), abc_atlas_access (v0.7.0)]</strong></p>
+<ul>
+<li><p>Added the Human-Mammalian Brain - Basal Ganglia (HMBA-BG) 10X dataset.</p>
+<ul>
+<li><p>~2 million single cell transcriptomes with ~16k genes aligned across
+Human, Macaque, and Marmoset.</p></li>
+<li><p>Cross-species taxonomy containing 1435 clusters with annotations</p></li>
+<li><p>Individual single cell transcriptome datasets for each of the species in
+this release including:</p>
+<ul>
+<li><p>1,683,105 Human cells, 36,601 genes</p></li>
+<li><p>839,102 Macaque cells, 35,219 genes</p></li>
+<li><p>414,575 Marmoset cells, 35,787 genes</p></li>
+</ul>
+</li>
+<li><p>MapMyCells files for each of the individual species.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>[Add ASAP-PMDBS dataset and MapMyCells results (version 20250331), abc_atlas_access (v0.6.0)]</strong></p>
+<ul>
+<li><p>Added single cell transscriptomics from the 3 million cell, Aligning Science
+Across Parkinson’s (ASAP) Human Postmortem-Derived Brain Sequencing
+Collection (PMDBS).</p>
+<ul>
+<li><p>3 million cells from 5 teams over 220 donors.</p></li>
+<li><p>Results of MapMyCells run on the 3 million cells mapping them into
+the Whole Human Brain and SEA-AD taxonomies.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>[Update aging Mouse UMAP (version 20250131), abc_atlas_access (v0.5.0)]</strong></p>
+<ul>
+<li><p>Fix 588 cells with missing UMAP coordinates.</p></li>
+</ul>
+</li>
+<li><p><strong>[Aging Mouse data (version 20241130), abc_atlas_access (v0.4.0)]</strong></p>
+<ul>
+<li><p>Add the Jin et al., aging mouse dataset.</p>
+<ul>
+<li><p>1.2 million cells divided into adult and aged mouse cells.</p></li>
+<li><p>847 cluster taxonomy with identified associations into the supertype and
+above levels of the Whole Mouse Brain taxonomy.</p></li>
+<li><p>2,449 age differential expression genes.</p></li>
+</ul>
+</li>
+<li><p>Add aging mouse to create gene expression script.</p></li>
+<li><p>Update WMB cluster annotations to the latest version.</p></li>
+<li><p>Separate dependencies for notebooks and base, cache package.</p></li>
+</ul>
+</li>
+<li><p><strong>[ABC Sample ID update (version 20241115) abc_atlas_access (v0.3.0)]</strong></p>
+<ul>
+<li><p>Add abc_sample_id to cell_metadatas of the projects listed below. This
+allows users to use cell selections they’ve downloaded from the ABC Atlas
+visualization.</p>
+<ul>
+<li><p>MERFISH-C57BL6J-638850(-imputed)</p></li>
+<li><p>WHB-10Xv3</p></li>
+<li><p>WMB-10X</p></li>
+<li><p>Zhuang-ABCA-(1-4)</p></li>
+</ul>
+</li>
+<li><p>Added notebook showing how to use abc_sample_id.</p></li>
+</ul>
+</li>
+<li><p><strong>[Summer 2024 Public Beta (version 20240831) abc_atlas_access (v0.2.0)]</strong></p>
+<ul>
+<li><p>Released ~8k imputed genes for the MERFISH-C57BL6J-638850 dataset.</p></li>
+<li><p>Added new notebooks and pages for the imputed gene dataset.</p></li>
+<li><p>Updated cache object for better compatibility across platforms.</p>
+<ul>
+<li><p>Added automatic unittesting via GitHub Actions.</p></li>
+<li><p>Modified cache to autodetect cache type (local or s3) for easier
+compatibility with CodeOcean/s3fs-fuse mounts.</p></li>
+<li><p>Simplified notebooks’ use of the cache.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>[abc_atlas_access (v0.1.2)]</strong></p>
+<ul>
+<li><p>Add matplotlib magic.</p></li>
+<li><p>Fixed bugs in pathlib import in notebooks</p></li>
+<li><p>Added script for selecting genes from expression matrices for use on
+CodeOcean.</p></li>
+</ul>
+</li>
+<li><p><strong>[abc_atlas_access (v0.1.1)]</strong></p>
+<ul>
+<li><p>Fixed compatibility issue with read only local caches specifically for
+fuse style file mounts such as those used on CodeOcean.</p></li>
+<li><p>Added local cache example to notebooks.</p></li>
+</ul>
+</li>
+<li><p><strong>[abc_atlas_access (v0.1.0)]</strong></p>
+<ul>
+<li><p>Fixed issue with loading 10X mouse data with the <code class="docutils literal notranslate"><span class="pre">get_gene_data</span></code> function.</p></li>
+</ul>
+</li>
+<li><p><strong>[Spring 2024 Public Beta (version 20240330)]</strong></p>
+<ul>
+<li><p>Added Whole Human Brain transcriptomic, taxonomy and clustering datasets
+from Siletti et al. 2023 to the ABC Atlas.</p></li>
+<li><p>Added new AbcProjectCache python class to facilitate data download and
+usage.</p>
+<ul>
+<li><p>Added file hashes to the manifest.json to facilitate data integrity
+checks in the cache class.</p></li>
+</ul>
+</li>
+<li><p>Updated all jupyter notebooks to use the new AbcProjectCache class.</p></li>
+<li><p>Added new notebooks for the whole human brain datasets.</p></li>
+<li><p>Re-organized jupyter-book webpages.</p></li>
+</ul>
+</li>
+</ul>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -509,11 +843,10 @@ the 10x transcriptomics datasets have been subdivided into smaller packages grou
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="right-next"
        href="notebooks/getting_started.html"
@@ -524,15 +857,30 @@ the 10x transcriptomics datasets have been subdivided into smaller packages grou
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-notebooks">Available notebooks:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-notes">Release Notes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -550,6 +898,7 @@ By Allen Institute
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -576,8 +925,8 @@ By Allen Institute
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
